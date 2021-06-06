@@ -1,9 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.*" %>
+	<%@ page import="com.suza.db.DepartmentDb" %>
+	<%@ page import="com.suza.model.Department" %>
 <!DOCTYPE html>
 <html>
 	<%@ include file="../../includes/head.jsp" %>
 <body>
+	<%
+		List<Department> list=DepartmentDb.getAllDepartment();
+	%>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 	<%@ include file="../../includes/header.jsp" %>	
 <div class="content">	
@@ -74,7 +80,11 @@
      		</div>
      		<div class="form-group col-md-6">
 			     <label>Department:</label>
-			     <input class="form-control" type="text" name="department">
+			     <select class="form-control" name="department">
+				<% for(Department dep:list){ %>
+				<option><%= dep.getDepCode() %></option>
+				<%} %>
+				</select>
      		</div>
      	</div>
      	<div class ="row form-horizontal">

@@ -10,6 +10,6 @@
 	<h1 class="text-center">Course Registration Form</h1>
 </div>
 
-<%@ include file="../../includes/footer.jsp"%>
+<%@ include file="../../includes/footer.jsp" %>
 </body>
 </html>
