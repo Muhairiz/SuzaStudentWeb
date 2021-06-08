@@ -1,9 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.util.*" %>
+	<%@ page import="com.suza.db.FacultyDb, com.suza.model.Faculty" %>
 <!DOCTYPE html>
 <html>
 <%@ include file ="../../includes/head.jsp" %>
 <body>
+	<%
+		List<Faculty> list=FacultyDb.getAllFaculty();
+	%>
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 <div class="content">		
@@ -82,7 +87,11 @@
      	<div class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
 			     <label>Faculty:</label>
-			     <input class="form-control" type="text" name="facult" >
+			     <select class="form-control" name="facult">
+				<% for(Faculty flt:list){ %>
+				<option><%= flt.getFacultyCode() %></option>
+				<%} %>
+				</select>
      		</div>
      	</div>
      	<input class="form-control" type="hidden" name="recorder" value="<%=recorder %>">

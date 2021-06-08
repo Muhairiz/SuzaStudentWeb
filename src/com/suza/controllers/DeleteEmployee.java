@@ -1,27 +1,24 @@
 package com.suza.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.suza.db.DepartmentDb;
-import com.suza.model.Department;
+import com.suza.db.EmployeeDb;
 
 /**
- * Servlet implementation class UpdateDepartment
+ * Servlet implementation class DeleteEmployee
  */
-@WebServlet("/UpdateDepartment")
-public class UpdateDepartment extends HttpServlet {
+@WebServlet("/DeleteEmployee")
+public class DeleteEmployee extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateDepartment() {
+    public DeleteEmployee() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,26 +30,9 @@ public class UpdateDepartment extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		 response.setContentType("text/html");
-	     PrintWriter out=response.getWriter();
-	     String dep_code=request.getParameter("dep_code");
-		 String dep_name=request.getParameter("dep_name");
-		 String recorder=request.getParameter("recorder");
-		 
-		 Department dep=new Department();
-		 dep.setDepName(dep_name);
-		 dep.setRecorder(recorder);
-		 dep.setDepCode(dep_code);
-		 
-		 int result=DepartmentDb.updateDepartment(dep);
-		 
-	        if(result>0){
-	            out.print("<p>Record updated successfully!</p>");
-	            response.sendRedirect("views/admin/viewdepartment.jsp");
-	        }else{
-	            out.println("Sorry! unable to save record");
-	            response.sendRedirect("views/admin/updatefaculty.jsp");
-	        }
+		String emp_no=request.getParameter("id");
+        EmployeeDb.delete(emp_no);
+        response.sendRedirect("views/admin/viewacademic.jsp");
 	}
 
 	/**

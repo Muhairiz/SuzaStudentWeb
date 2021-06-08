@@ -13,7 +13,7 @@
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 	<%@ include file="../../includes/header.jsp" %>	
 <div class="content">	
-		<h1 class="text-center">Employee Registration Form</h1>
+		<h1 class="text-center">Staff Registration Form</h1>
 		
 		<form action="../../SaveEmployee" method="POST" class="form">	
        	 <div class ="row form-horizontal">

@@ -3,6 +3,9 @@ package com.suza.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 import com.suza.model.Faculty;
 
 public class FacultyDb {
@@ -32,4 +35,64 @@ public class FacultyDb {
 
         return result;
 	}
+	
+	public static List<Faculty> getAllFaculty(){
+        List<Faculty> list=new ArrayList<Faculty>();
+        try{
+            Connection con=FacultyDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("select * from facults");
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){
+            	Faculty flt=new Faculty();
+            	
+            	flt.setFacultyCode(rs.getString(1));
+            	flt.setFacultyName(rs.getString(2));
+            	flt.setDuration(rs.getString(3));
+                list.add(flt);
+            }
+            con.close();
+        }catch(Exception e){e.printStackTrace();}
+
+        return list;
+    }
+	
+	public static Faculty getFacultyById(String flt_code){
+		Faculty flt=new Faculty();
+
+	        try{
+	            Connection con=FacultyDb.getConnection();
+	            PreparedStatement ps=con.prepareStatement("select * from facults where facult_code=?");
+	            ps.setString(1,flt_code);
+	            ResultSet rs=ps.executeQuery();
+	            if(rs.next()){
+	            	flt.setFacultyCode(rs.getString(1));
+	            	flt.setFacultyName(rs.getString(2));
+	            	flt.setDuration(rs.getString(3));
+	            	flt.setRecorder(rs.getString(4));
+	            }
+	            con.close();
+	        }catch(Exception ex){ex.printStackTrace();}
+	        
+	        return flt;
+	    }
+	
+	public static int updateFaculty(Faculty flt) {
+		int result=0;
+        try{
+            Connection con=FacultyDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("update facults set facult_name=?,duration=?,recorded=? where facult_code=?");
+            
+            ps.setString(1, flt.getFacultyName());
+			ps.setString(2, flt.getDuration());
+            ps.setString(3,flt.getRecorder());
+            ps.setString(4,flt.getFacultyCode());
+            
+            result=ps.executeUpdate();
+
+            con.close();
+        }catch(Exception ex){ex.printStackTrace();}
+		return result;
+	}
+	
 }
+

@@ -1,6 +1,7 @@
 package com.suza.controllers;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
@@ -33,7 +34,7 @@ public class SaveDepartment extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		response.setContentType("text/html");
+		 response.setContentType("text/html");
 	     PrintWriter out=response.getWriter();
 		 
 		 String dep_code=request.getParameter("dep_code");
