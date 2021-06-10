@@ -51,6 +51,7 @@ public class SaveFaculty extends HttpServlet {
 		 
 		 
 		 int result=FacultyDb.saveFaculty(facult);
+		 
 	        if(result>0){
 	        	response.sendRedirect("views/admin/viewfaculty.jsp");
 	        }else{

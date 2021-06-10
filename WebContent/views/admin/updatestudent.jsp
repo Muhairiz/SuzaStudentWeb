@@ -1,0 +1,95 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+	<%@ page import="java.util.*" %>
+	<%@ page import="com.suza.db.StudentDb, com.suza.model.Student" %>
+<!DOCTYPE html>
+<html>
+<%@ include file ="../../includes/head.jsp" %>
+<body>
+
+	<%
+		String reg_no =request.getParameter("reg");	
+		Student std=StudentDb.getStudentById(reg_no);
+	%>
+
+	<%@ include file="../../includes/header.jsp" %>
+	<%@ include file="../../includes/sidenavAdmin.jsp" %>
+<div class="content">		
+	<h1 class="text-center">Update Staff Form</h1>
+	
+	<form action="../../UpdateStudent" method="POST" class="form">
+	
+		<input type="hidden" name="id" value="<%=std.getReg() %>">
+     	<div class ="row form-horizontal">
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> First Name:</label>
+			     <input class="form-control" type="text" name="fname" value="<%=std.getFirstname() %>">
+     		</div>
+     		<div class="form-group col-md-6">  	 	
+			     <label> Middle Name:</label>
+			     <input class="form-control" type="text" name="mname" value="<%=std.getMiddlename() %>">
+     		</div>
+     	</div>
+     	<div class ="row form-horizontal">
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> Last Name:</label>
+			     <input class="form-control" type="text" name="lname" value="<%=std.getLastname() %>">
+     		</div>
+     		<div class="form-group col-md-6">  	 	
+			     <label> Date of Birth:</label>
+			     <input class="form-control" type="date" name="dob" value="<%=std.getDob() %>">
+     		</div>
+     	</div>
+     	<div class ="row form-horizontal">
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> Admission Year:</label>
+			     <input class="form-control" type="text" name="qualification" value="<%=std.getAdmissionYear() %>">
+     		</div>
+     		<div class="form-group col-md-6">  	 	
+			     <label> Completion Year:</label>
+			     <input class="form-control" type="text" name="phone" value="<%=std.getComplitionYear() %>">
+     		</div>
+     	</div>
+     	<div class ="row form-horizontal">
+     		<div class="form-group col-md-6">  	 	
+			     <label> Gender:</label>
+			 <div class="form-group col-md-4">  	 	
+			     <input type="radio" name="gender" value="Male">   Male				 	
+			     <input type="radio" name="gender" value="Female">  Female
+			 </div>
+     		</div>
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> Phone:</label>
+			     <input class="form-control" type="text" name="email" value="<%=std.getPhone() %>">
+     		</div>
+     	</div><div class ="row form-horizontal">
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> Email:</label>
+			     <input class="form-control" type="text" name="pass" value="<%=std.getEmail() %>">
+     		</div>
+     		<div class="form-group col-md-6">  	 	
+			     <label> Physical Address:</label>
+			     <input class="form-control" type="text" name="roll" value="<%=std.getPhisical() %>">
+     		</div>
+     	</div>
+     	<div class ="row form-horizontal">
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> Password:</label>
+			     <input class="form-control" type="text" name="department" value="<%=std.getPassword() %>">
+     		</div>
+     		<div class="form-group col-md-6">  	 	
+			     <label> Faculty:</label>
+			     <input class="form-control" type="text" name="address" value="<%=std.getFacult() %>">
+     		</div>
+     	</div>
+     	<input class="form-control" type="hidden" name="recorder" value="<%=recorder %>">
+     	
+     	<input class="btn btn-success" type="submit" value="Update">
+     	<a href="viewacademic.jsp" class="btn btn-danger">Cancel</a>
+    </form>	
+	
+</div>
+
+<%@ include file="../../includes/footer.jsp"%>
+</body>
+</html>
