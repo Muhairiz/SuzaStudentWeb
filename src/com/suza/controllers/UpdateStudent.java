@@ -11,17 +11,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.suza.db.StudentDb;
 import com.suza.model.Student;
+
 /**
- * Servlet implementation class SaveStudent
+ * Servlet implementation class UpdateStudent
  */
-@WebServlet("/SaveStudent")
-public class SaveStudent extends HttpServlet {
+@WebServlet("/UpdateStudent")
+public class UpdateStudent extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SaveStudent() {
+    public UpdateStudent() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,7 +34,7 @@ public class SaveStudent extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		 response.setContentType("text/html");
+		response.setContentType("text/html");
 	     PrintWriter out=response.getWriter();
 		 
 		 String regNo=request.getParameter("reg_no");
@@ -46,7 +47,7 @@ public class SaveStudent extends HttpServlet {
 		 String gender=request.getParameter("gender");
 		 String phone=request.getParameter("phone");
 		 String email=request.getParameter("email");
-		 String phisical=request.getParameter("phisical");
+		 String phisical=request.getParameter("physical");
 		 String password=request.getParameter("password");
 		 String facult=request.getParameter("facult");
 		 String recorder=request.getParameter("recorder");
@@ -68,17 +69,15 @@ public class SaveStudent extends HttpServlet {
 		 std.setFacult(facult);
 		 std.setRecorded(recorder);
 		 
+		 int result=StudentDb.updateStudent(std);
 		 
-		 int result=StudentDb.saveStudent(std);
 	        if(result>0){
-	        	response.sendRedirect("views/admin/viewstudents.jsp");
+	            out.print("<p>Record updated successfully!</p>");
+	            response.sendRedirect("views/admin/viewstudents.jsp");
 	        }else{
 	            out.println("Sorry! unable to save record");
-	            response.sendRedirect("views/admin/registerstudent.jsp");
+	            response.sendRedirect("views/admin/updatestudent.jsp");
 	        }
-
-	        out.close();
-		
 	}
 
 	/**

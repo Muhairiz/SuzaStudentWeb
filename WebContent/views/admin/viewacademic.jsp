@@ -12,8 +12,20 @@
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 <div class="content">		
-	<h1 class="text-center">List of Staff</h1>
-	
+	<div class ="row form-horizontal">
+	<div class="col-md-3">
+		<form action="#" method="post">
+			<input id="search" type="text" placeholder="Search..." autocomplete="off">
+		</form>
+	</div>
+	<div class="col-md-6">	
+		<h1 class="text-center">List of Academic Staff</h1>
+	</div>
+	<div class="col-md-3">
+		<input type="button" value="Print" onclick="printReport()" >
+	</div>
+</div>
+	<div id="report">
 	<div class="table-responsive">
 	<table class="table table-striped table-sm table-bordered">
 		<thead>
@@ -35,7 +47,7 @@
 				<th>Update</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody id="tableData">
 			<% for(Employee emp:list){ %>
 			<tr>
 				<td><%= emp.getId() %></td>
@@ -51,15 +63,17 @@
 				<td><%= emp.getRoll() %></td>
 				<td><%= emp.getDepartment() %></td>
 				<td><%= emp.getPhisical() %></td>
-				<td><a href="../../DeleteEmployee?id=<%= emp.getId() %>">Delete</a></td>
-				<td><a href="updateacademic.jsp?id=<%= emp.getId() %>">Update</a></td>
+				<td><a class="btn btn-danger" href="../../DeleteEmployee?id=<%= emp.getId() %>"><i class="fa fa-trash" ></i></a></td>
+				<td><a href="updateacademic.jsp?id=<%= emp.getId() %>"><i class="fa fa-edit"></i></a></td>
 			</tr>
 			<% } %>
 		</tbody>
 	</table>
 	</div>
+	</div>
 </div>
 
+<%@ include file="../../includes/scripts.jsp"%>
 <%@ include file="../../includes/footer.jsp"%>
 </body>
 </html>

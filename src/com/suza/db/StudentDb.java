@@ -120,7 +120,7 @@ public class StudentDb {
 			ps.setString(11, std.getPassword());
 			ps.setString(12, std.getFacult());
 			ps.setString(13, std.getRecorded());
-			 ps.setString(41, std.getReg());
+			 ps.setString(14, std.getReg());
             
             result=ps.executeUpdate();
 

@@ -7,10 +7,7 @@
 	</div>
 	  
 	<div class="navbar-brand">
-		<form action="#" method="post">
-			<input type="text" name="search" placeholder="Search...">
-			<button class="btn btn-success" type="submit">Search</button>
-		</form>
+		
 	</div>
 
 	<a href="../../Logout">

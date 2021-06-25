@@ -19,7 +19,7 @@
 	
 	<form action="../../UpdateStudent" method="POST" class="form">
 	
-		<input type="hidden" name="id" value="<%=std.getReg() %>">
+		<input type="hidden" name="reg_no" value="<%=std.getReg() %>">
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
 			     <label> First Name:</label>
@@ -43,11 +43,11 @@
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
 			     <label> Admission Year:</label>
-			     <input class="form-control" type="text" name="qualification" value="<%=std.getAdmissionYear() %>">
+			     <input class="form-control" type="text" name="admission" value="<%=std.getAdmissionYear() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
 			     <label> Completion Year:</label>
-			     <input class="form-control" type="text" name="phone" value="<%=std.getComplitionYear() %>">
+			     <input class="form-control" type="text" name="completion" value="<%=std.getComplitionYear() %>">
      		</div>
      	</div>
      	<div class ="row form-horizontal">
@@ -60,26 +60,26 @@
      		</div>
        	 	<div class="form-group col-md-6">  	 	
 			     <label> Phone:</label>
-			     <input class="form-control" type="text" name="email" value="<%=std.getPhone() %>">
+			     <input class="form-control" type="text" name="phone" value="<%=std.getPhone() %>">
      		</div>
      	</div><div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
 			     <label> Email:</label>
-			     <input class="form-control" type="text" name="pass" value="<%=std.getEmail() %>">
+			     <input class="form-control" type="text" name="email" value="<%=std.getEmail() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
 			     <label> Physical Address:</label>
-			     <input class="form-control" type="text" name="roll" value="<%=std.getPhisical() %>">
+			     <input class="form-control" type="text" name="physical" value="<%=std.getPhisical() %>">
      		</div>
      	</div>
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
 			     <label> Password:</label>
-			     <input class="form-control" type="text" name="department" value="<%=std.getPassword() %>">
+			     <input class="form-control" type="text" name="password" value="<%=std.getPassword() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
 			     <label> Faculty:</label>
-			     <input class="form-control" type="text" name="address" value="<%=std.getFacult() %>">
+			     <input class="form-control" type="text" name="facult" value="<%=std.getFacult() %>">
      		</div>
      	</div>
      	<input class="form-control" type="hidden" name="recorder" value="<%=recorder %>">
