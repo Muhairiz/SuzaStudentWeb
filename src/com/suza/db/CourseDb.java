@@ -65,4 +65,63 @@ public class CourseDb {
         return list;
     }
 	
+	public static Course getCourseById(String crs_code){
+		Course crs=new Course();
+
+	        try{
+	            Connection con=CourseDb.getConnection();
+	            PreparedStatement ps=con.prepareStatement("select * from courses where course_code=?");
+	            ps.setString(1,crs_code);
+	            ResultSet rs=ps.executeQuery();
+	            if(rs.next()){
+	            	crs.setCourseCode(rs.getString(1));
+	            	crs.setCourseName(rs.getString(2));
+	            	crs.setSemester(rs.getString(3));
+	            	crs.setAcademicYear(rs.getString(4));
+	            	crs.setDuration(rs.getString(5));
+	            	crs.setCateory(rs.getString(6));
+	            	crs.setCredit(rs.getInt(7));
+	            	crs.setRecorder(rs.getString(8));
+	            }
+	            con.close();
+	        }catch(Exception ex){ex.printStackTrace();}
+	        
+	        return crs;
+	    }
+	
+	public static int updateCourse(Course crs) {
+		int result=0;
+        try{
+            Connection con=CourseDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("update courses set course_name=?,semester=?,academic_year=?,duration=?,category=?,credit=?,recorded=? where course_code=?");
+            
+            ps.setString(1, crs.getCourseName());
+			ps.setString(2, crs.getSemester());
+            ps.setString(3,crs.getAcademicYear());
+            ps.setString(4,crs.getDuration());
+            ps.setString(5,crs.getCateory());
+            ps.setInt(6,crs.getCredit());
+            ps.setString(7,crs.getRecorder());
+            ps.setString(8,crs.getCourseCode());
+            
+            result=ps.executeUpdate();
+
+            con.close();
+        }catch(Exception ex){ex.printStackTrace();}
+		return result;
+	}
+	
+	public static int delete(String crs_code){
+        int status=0;
+        try{
+        	Connection con=CourseDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("delete from courses where course_code=?");
+            ps.setString(1,crs_code);
+            status=ps.executeUpdate();
+            con.close();
+        }catch(Exception e){e.printStackTrace();}
+
+        return status;
+    }
+	
 }

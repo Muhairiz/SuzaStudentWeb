@@ -39,8 +39,8 @@
 				<td><%= crs.getDuration() %></td>
 				<td><%= crs.getCateory() %></td>
 				<td><%= crs.getCredit() %></td>
-				<td><a href="../../DeleteFaculty?flt_code=<%= crs.getCourseCode() %>">Delete</a></td>
-				<td><a href="updatefaculty.jsp?flt_code=<%= crs.getCourseCode() %>">Update</a></td>
+				<td><a href="../../DeleteCourse?crs_code=<%= crs.getCourseCode() %>">Delete</a></td>
+				<td><a href="updatecourse.jsp?crs_code=<%= crs.getCourseCode() %>">Update</a></td>
 			</tr>
 			<% } %>
 		</tbody>
