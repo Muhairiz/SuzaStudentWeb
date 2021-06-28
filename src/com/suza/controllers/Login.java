@@ -64,13 +64,9 @@ public class Login extends HttpServlet {
 			}else {
 				response.sendRedirect("views/staff/index.jsp");
 			}
-			//request.getRequestDispatcher("Index.jsp").include(request, response);
-			//String destPage1 ="Index.jsp";
+			
 			}else {
-				//out.println("invalid");
-				out.println("<p align='center'>Invalid username or password</p>");
-				 response.sendRedirect("login.jsp");
-		         //request.getRequestDispatcher("login.jsp").include(request, response);
+				out.println("<p align='center' colour='blue'>Invalid username or password</p>");
 			}
 		
 		
