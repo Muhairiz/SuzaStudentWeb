@@ -30,6 +30,8 @@
 	<div class="dropdown-container">
 	  <a href="registercourse.jsp">Add Course</a>
 	  <a href="viewcourse.jsp"><i class="fa fa-binoculars"></i>Manage Course</a>
+	  <a href="courseassign.jsp">Course Assign</a>
+	  <a href="viewcourseassign.jsp"><i class="fa fa-binoculars"></i>View Course Assign</a>
 	</div>
 	
 	 <button class="dropdown-btn">Faculty 

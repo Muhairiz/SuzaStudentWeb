@@ -13,7 +13,7 @@
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 <div class="content">		
-	<h1 class="text-center">List of Faculties</h1>
+	<h1 class="text-center">List of Courses</h1>
 	
 	<table class="table table-striped">
 		<thead>
