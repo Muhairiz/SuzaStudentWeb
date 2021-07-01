@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>login page</title>
 <script src="bootstrap/js/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
 <link rel="stylesheet" href="bootstrap/css/styles.css">

@@ -58,7 +58,7 @@ public class Login extends HttpServlet {
 			if(myRoll.equals("admin")) {
 				response.sendRedirect("views/admin/index.jsp");
 				
-			}else if(myRoll.equals("dataentry")) {
+			}else if(myRoll.equals("data entry")) {
 				response.sendRedirect("views/dataentry/index.jsp");
 				
 			}else {
@@ -66,7 +66,7 @@ public class Login extends HttpServlet {
 			}
 			
 			}else {
-				out.println("<p align='center' colour='blue'>Invalid username or password</p>");
+				out.println("<p align='center'>Invalid username or password</p>");
 			}
 		
 		

@@ -17,7 +17,7 @@
 <div class="content">		
 	<h1 class="text-center">Update Course Assigned Form</h1>
 	
-	<form action="../../UpdateEmployee" method="POST" class="form">
+	<form action="../../UpdateAssigned" method="POST" class="form">
 	
 		<input type="hidden" name="id" value="<%=crsa.getId() %>">
      	<div class ="row form-horizontal">
@@ -35,6 +35,13 @@
 			     <label> Faculty:</label>
 			     <input class="form-control" type="text" name="faculty" value="<%=crsa.getFaculty() %>">
      		</div>
+     		<div class="form-group col-md-6">  	 	
+			     <label>Academic Year:</label>
+			    <input class="form-control" type="text" name="year" value="<%=crsa.getYear() %>">
+     		</div>
+     	</div>
+     	
+     	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
 			     <label>Recorder:</label>
 			    <input class="form-control" type="text" name="recorder" value="<%=recorder %>" readonly>

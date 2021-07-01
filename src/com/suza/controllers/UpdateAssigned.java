@@ -13,16 +13,16 @@ import com.suza.db.CourseAssignDb;
 import com.suza.model.CourseAssign;
 
 /**
- * Servlet implementation class SaveAssignCourse
+ * Servlet implementation class UpdateAssigned
  */
-@WebServlet("/SaveAssignCourse")
-public class SaveAssignCourse extends HttpServlet {
+@WebServlet("/UpdateAssigned")
+public class UpdateAssigned extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SaveAssignCourse() {
+    public UpdateAssigned() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,6 +43,8 @@ public class SaveAssignCourse extends HttpServlet {
 		 String ac_year=request.getParameter("year");
 		 int year = Integer.parseInt(ac_year);
 		 String recorder=request.getParameter("recorder");
+		 String id = request.getParameter("id");
+		 int aid = Integer.parseInt(id);
 		 
 		 CourseAssign crsa =new CourseAssign();
 		 
@@ -51,19 +53,21 @@ public class SaveAssignCourse extends HttpServlet {
 		 crsa.setFaculty(faculty);
 		 crsa.setRecorder(recorder);
 		 crsa.setYear(year);
+		 crsa.setId(aid);
 		 
 		 
-		 int result=CourseAssignDb.saveAssignCourse(crsa);
+		 int result=CourseAssignDb.updateCourseAssign(crsa);
 	        if(result>0){
 	        	response.sendRedirect("views/admin/viewcourseassign.jsp");
 	        }else{
 	            out.println("Sorry! unable to save record");
-	            response.sendRedirect("views/admin/courseassign.jsp");
+	            response.sendRedirect("views/admin/updateassigncourse.jsp");
 	        }
 
 	        out.close();
 		
-		
+		 
+		 
 	}
 
 	/**

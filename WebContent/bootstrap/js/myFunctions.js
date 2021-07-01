@@ -1,4 +1,3 @@
-<script type="text/javascript">
 	function printReport(){
 		var report = document.getElementById("report").innerHTML;
 		var obj = window.open('', '', 'height=500, width=500');
@@ -28,4 +27,19 @@
 		  });
 		});
 		
-</script>
+	//SIDE NAVE//
+		
+	var dropdown = document.getElementsByClassName("dropdown-btn");
+	var i;
+
+	for (i = 0; i < dropdown.length; i++) {
+	  dropdown[i].addEventListener("click", function() {
+	    this.classList.toggle("active");
+	    var dropdownContent = this.nextElementSibling;
+	    if (dropdownContent.style.display === "block") {
+	      dropdownContent.style.display = "none";
+	    } else {
+	      dropdownContent.style.display = "block";
+	    }
+	  });
+	}

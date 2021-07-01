@@ -76,7 +76,11 @@
      	<div class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
 			     <label>Roll:</label>
-			     <input class="form-control" type="text" name="roll">
+			     <select class="form-control" name="roll">
+			     	<option value="staff">Staff</option>
+			     	<option value="admin">Admin</option>
+			     	<option value="data entry">Data Entry</option>
+			     </select>
      		</div>
      		<div class="form-group col-md-6">
 			     <label>Department:</label>

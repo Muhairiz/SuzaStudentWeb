@@ -4,7 +4,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Add Attendance</a>
+    <a href="#">Record Attendance</a>
     <a href="#">Manage Attendance</a>
   </div> 
   

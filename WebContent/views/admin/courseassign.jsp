@@ -48,6 +48,13 @@
 				</select>
      		</div>
      		<div class="form-group col-md-6">  	 	
+			     <label>Academic Year:</label>
+			    <input class="form-control" type="text" name="year">
+     		</div>
+     	</div>
+     	
+     	<div  class ="row form-horizontal">
+     		<div class="form-group col-md-6">  	 	
 			     <label>Recorder:</label>
 			    <input class="form-control" type="text" name="recorder" value="<%=recorder %>" readonly>
      		</div>

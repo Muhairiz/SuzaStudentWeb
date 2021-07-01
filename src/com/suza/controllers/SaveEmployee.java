@@ -73,8 +73,9 @@ public class SaveEmployee extends HttpServlet {
 	        if(result>0){
 	        	response.sendRedirect("views/admin/viewacademic.jsp");
 	        }else{
-	            out.println("Sorry! unable to save record");
+	        	
 	            response.sendRedirect("views/admin/registeracademic.jsp");
+	            out.println("<div><div class='alert alert-danger col-md-3'><strong>Invalid username or password!</strong></div></div>");
 	        }
 
 	        out.close();

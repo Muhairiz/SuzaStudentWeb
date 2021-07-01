@@ -25,11 +25,12 @@ public class CourseAssignDb {
 		
 		try {
 			Connection conn=CourseAssignDb.getConnection();
-			PreparedStatement ps=conn.prepareStatement("insert into course_assignment(course,employee,faculty,recorder) values(?,?,?,?)");
+			PreparedStatement ps=conn.prepareStatement("insert into course_assignment(course,employee,faculty,year,recorder) values(?,?,?,?,?)");
 			ps.setString(1, crsa.getCourse());
 			ps.setString(2, crsa.getEmployee());
 			ps.setString(3, crsa.getFaculty());
-			ps.setString(4, crsa.getRecorder());
+			ps.setInt(4, crsa.getYear());
+			ps.setString(5, crsa.getRecorder());
 			result =ps.executeUpdate();
 			conn.close();
 		}catch(Exception ex){ex.printStackTrace();}
@@ -49,7 +50,8 @@ public class CourseAssignDb {
             	ca.setCourse(rs.getString(2));
             	ca.setEmployee(rs.getString(3));
             	ca.setFaculty(rs.getString(4));
-            	ca.setRecorder(rs.getString(5));
+            	ca.setYear(rs.getInt(5));
+            	ca.setRecorder(rs.getString(6));
                 list.add(ca);
             }
             con.close();
@@ -71,11 +73,46 @@ public class CourseAssignDb {
 	            	ca.setCourse(rs.getString(2));
 	            	ca.setEmployee(rs.getString(3));
 	            	ca.setFaculty(rs.getString(4));
-	            	ca.setRecorder(rs.getString(5));
+	            	ca.setYear(rs.getInt(5));
+	            	ca.setRecorder(rs.getString(6));
 	            }
 	            con.close();
 	        }catch(Exception ex){ex.printStackTrace();}
 	        
 	        return ca;
 	    }
+	
+	public static int delete(String id){
+        int status=0;
+        try{
+        	Connection con=CourseAssignDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("delete from course_assignment where assign_id=?");
+            ps.setString(1,id);
+            status=ps.executeUpdate();
+            con.close();
+        }catch(Exception e){e.printStackTrace();}
+
+        return status;
+    }
+	
+	public static int updateCourseAssign(CourseAssign crsa) {
+		int result=0;
+        try{
+            Connection con=CourseAssignDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("update course_assignment set course=?,employee=?,faculty=?,year=?,recorder=? where assign_id=?");
+            
+            ps.setString(1, crsa.getCourse());
+			ps.setString(2, crsa.getEmployee());
+			ps.setString(3, crsa.getFaculty());
+			ps.setInt(4, crsa.getYear());
+			ps.setString(5, crsa.getRecorder());
+			ps.setInt(6, crsa.getId());
+            
+            result=ps.executeUpdate();
+
+            con.close();
+        }catch(Exception ex){ex.printStackTrace();}
+		return result;
+	}
+	
 }

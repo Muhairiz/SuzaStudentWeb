@@ -21,6 +21,7 @@
 				<th>Course Code</th>
 				<th>Academic Staff</th>
 				<th>Faculty</th>
+				<th>Academic Year</th>
 				<th>Delete</th>
 				<th>Update</th>
 			</tr>
@@ -31,7 +32,8 @@
 				<td><%= crsa.getCourse() %></td>
 				<td><%= crsa.getEmployee() %></td>
 				<td><%= crsa.getFaculty() %></td>
-				<td><a href="../../#?id=<%= crsa.getId() %>">Delete</a></td>
+				<td><%= crsa.getYear() %></td>
+				<td><a href="../../DeleteAssign?id=<%= crsa.getId() %>">Delete</a></td>
 				<td><a href="updateassigncourse.jsp?id=<%= crsa.getId() %>">Update</a></td>
 			</tr>
 			<% } %>

@@ -2,7 +2,7 @@ package com.suza.model;
 
 public class CourseAssign {
 
-	private int id;
+	private int id,year;
 	private String course,employee,faculty,recorder;
 	public int getId() {
 		return id;
@@ -33,5 +33,11 @@ public class CourseAssign {
 	}
 	public void setRecorder(String recorder) {
 		this.recorder = recorder;
+	}
+	public int getYear() {
+		return year;
+	}
+	public void setYear(int year) {
+		this.year = year;
 	}
 }
