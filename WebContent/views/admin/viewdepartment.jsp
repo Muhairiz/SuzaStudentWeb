@@ -30,6 +30,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th>Sn</th>
 				<th>Department Code</th>
 				<th>Department Name</th>
 				<th>Delete</th>
@@ -37,8 +38,12 @@
 			</tr>
 		</thead>
 		<tbody id="tableData">
-			<% for(Department dep:list){ %>
+			<%
+				int i =1;
+				for(Department dep:list){ 
+			%>
 			<tr>
+				<td><%= i %> <% i++; %></td>
 				<td><%= dep.getDepCode() %></td>
 				<td><%= dep.getDepName() %></td>
 				<td><a href="../../DeleteDepartment?dep_code=<%= dep.getDepCode() %>">Delete</a></td>

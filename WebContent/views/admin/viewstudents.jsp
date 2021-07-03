@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="java.util.*" %>
+    <%@ page import="java.util.*, java.text.*, java.time.*" %>
 	<%@ page import="com.suza.db.StudentDb" %>
 	<%@ page import="com.suza.model.Student" %>
 <!DOCTYPE html>
@@ -19,6 +19,7 @@
 	<table class="table table-striped table-sm table-bordered">
 		<thead>
 			<tr>
+				<th>Sn</th>
 				<th>Reg No</th>
 				<th>First</th>
 				<th>Middle</th>
@@ -32,18 +33,39 @@
 				<th>Address</th>
 				<th>Password</th>
 				<th>Faculty</th>
+				<th>Enrolled</th>
 				<th>Delete</th>
 				<th>Update</th>
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Student stl:list){ %>
+			<% 
+				int i=1;
+				for(Student stl:list){ 
+			%>
 			<tr>
+				<td><%= i %> <% i++; %></td>
 				<td><%= stl.getReg() %></td>
 				<td><%= stl.getFirstname() %></td>
 				<td><%= stl.getMiddlename() %></td>
 				<td><%= stl.getLastname() %></td>
-				<td><%= stl.getDob() %></td>
+				
+				<td><% 
+					String date1= stl.getDob();
+					Date date = new SimpleDateFormat("yyyy-MM-dd").parse(date1);
+					Calendar c = Calendar.getInstance();
+					c.setTime(date);
+					int year = c.get(Calendar.YEAR);
+					int month = c.get(Calendar.MONTH);
+					int day = c.get(Calendar.DATE);
+					LocalDate dob = LocalDate.of(year, month, day);
+					LocalDate now = LocalDate.now();
+					Period diff = Period.between(dob, now);
+					int age = diff.getYears();
+					
+					out.print(age);
+				%></td>
+				
 				<td><%= stl.getAdmissionYear() %></td>
 				<td><%= stl.getComplitionYear() %></td>
 				<td><%= stl.getGender() %></td>
@@ -52,8 +74,9 @@
 				<td><%= stl.getPhisical() %></td>
 				<td><%= stl.getPassword() %></td>
 				<td><%= stl.getFacult() %></td>
-				<td><a href="../../DeleteStudent?reg=<%= stl.getReg() %>">Delete</a></td>
-				<td><a href="updatestudent.jsp?reg=<%= stl.getReg() %>">Update</a></td>
+				<td><%= stl.getEnrolled() %></td>
+				<td><a class="btn btn-danger" href="../../DeleteStudent?reg=<%= stl.getReg() %>">Delete</a></td>
+				<td><a class="btn btn-primary" href="updatestudent.jsp?reg=<%= stl.getReg() %>">Update</a></td>
 			</tr>
 			<% } %>
 		</tbody>

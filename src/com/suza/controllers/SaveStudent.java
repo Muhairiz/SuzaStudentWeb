@@ -49,6 +49,7 @@ public class SaveStudent extends HttpServlet {
 		 String phisical=request.getParameter("phisical");
 		 String password=request.getParameter("password");
 		 String facult=request.getParameter("facult");
+		 String enrollment=request.getParameter("enrolling");
 		 String recorder=request.getParameter("recorder");
 		 
 		 Student std=new Student();
@@ -66,6 +67,7 @@ public class SaveStudent extends HttpServlet {
 		 std.setPhisical(phisical);
 		 std.setPassword(password);
 		 std.setFacult(facult);
+		 std.setEnrolled(enrollment);
 		 std.setRecorded(recorder);
 		 
 		 

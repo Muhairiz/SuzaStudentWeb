@@ -4,7 +4,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Record Attendance</a>
+    <a href="attendance.jsp">Record Attendance</a>
     <a href="#">Manage Attendance</a>
   </div> 
   
@@ -12,7 +12,7 @@
     <span class="fa fa-caret-down"></span>
   </button>
   <div class="dropdown-container">
-    <a href="#">Add Course Work</a>
+    <a href="coursework.jsp">Add Course Work</a>
     <a href="#">Manage Course Work</a>
   </div>
   

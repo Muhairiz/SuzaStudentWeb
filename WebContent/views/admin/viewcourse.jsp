@@ -18,6 +18,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th>Sn</th>
 				<th>Course Code</th>
 				<th>Course Name</th>
 				<th>Semester</th>
@@ -30,8 +31,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Course crs:list){ %>
+			<% 
+				int i=1;
+				for(Course crs:list){ 
+			%>
 			<tr>
+				<td><%= i %> <% i++; %></td>
 				<td><%= crs.getCourseCode() %></td>
 				<td><%= crs.getCourseName() %></td>
 				<td><%= crs.getSemester() %></td>

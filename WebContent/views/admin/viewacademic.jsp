@@ -30,6 +30,7 @@
 	<table class="table table-striped table-sm table-bordered">
 		<thead>
 			<tr>
+				<th>Sn</th>
 				<th>Staff No</th>
 				<th>First</th>
 				<th>Middle</th>
@@ -48,8 +49,12 @@
 			</tr>
 		</thead>
 		<tbody id="tableData">
-			<% for(Employee emp:list){ %>
+			<%
+				int i=1;
+				for(Employee emp:list){
+			%>
 			<tr>
+				<td><%= i %> <% i++; %></td>
 				<td><%= emp.getId() %></td>
 				<td><%= emp.getFirstName() %></td>
 				<td><%= emp.getMiddleName() %></td>

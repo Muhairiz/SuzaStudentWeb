@@ -18,6 +18,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th>Sn</th>
 				<th>Course Code</th>
 				<th>Academic Staff</th>
 				<th>Faculty</th>
@@ -27,8 +28,11 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(CourseAssign crsa:list){ %>
+			<% 
+				int i =1;
+				for(CourseAssign crsa:list){ %>
 			<tr>
+				<td><%= i %> <% i++; %></td>
 				<td><%= crsa.getCourse() %></td>
 				<td><%= crsa.getEmployee() %></td>
 				<td><%= crsa.getFaculty() %></td>

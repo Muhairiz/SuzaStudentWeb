@@ -93,6 +93,10 @@
 				<%} %>
 				</select>
      		</div>
+     		<div class="form-group col-md-6">
+			     <label>Enrolling:</label>
+			     <input class="form-control" type="text" name="enrolling">
+     		</div>
      	</div>
      	<input class="form-control" type="hidden" name="recorder" value="<%=recorder %>">
      	

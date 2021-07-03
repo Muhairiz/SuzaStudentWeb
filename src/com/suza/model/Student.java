@@ -2,7 +2,7 @@ package com.suza.model;
 
 public class Student {
 
-	private String reg,firstname,middlename,lastname,dob,admissionYear,complitionYear,gender,phone,email,phisical,password,facult,recorded;
+	private String reg,firstname,middlename,lastname,dob,admissionYear,complitionYear,gender,phone,email,phisical,password,facult,enrolled,recorded;
 
 	public Student() {
 		
@@ -118,5 +118,13 @@ public class Student {
 
 	public void setRecorded(String recorded) {
 		this.recorded = recorded;
+	}
+
+	public String getEnrolled() {
+		return enrolled;
+	}
+
+	public void setEnrolled(String enrolled) {
+		this.enrolled = enrolled;
 	}
 }

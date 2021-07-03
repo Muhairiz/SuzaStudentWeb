@@ -62,7 +62,8 @@
 			     <label> Phone:</label>
 			     <input class="form-control" type="text" name="phone" value="<%=std.getPhone() %>">
      		</div>
-     	</div><div class ="row form-horizontal">
+     	</div>
+     	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
 			     <label> Email:</label>
 			     <input class="form-control" type="text" name="email" value="<%=std.getEmail() %>">
@@ -82,10 +83,16 @@
 			     <input class="form-control" type="text" name="facult" value="<%=std.getFacult() %>">
      		</div>
      	</div>
+     	<div class ="row form-horizontal">
+       	 	<div class="form-group col-md-6">  	 	
+			     <label> Enrolling:</label>
+			     <input class="form-control" type="text" name="enrolling" value="<%=std.getEnrolled() %>">
+     		</div>
+     	</div>
      	<input class="form-control" type="hidden" name="recorder" value="<%=recorder %>">
      	
      	<input class="btn btn-success" type="submit" value="Update">
-     	<a href="viewacademic.jsp" class="btn btn-danger">Cancel</a>
+     	<a href="viewstudents.jsp" class="btn btn-danger">Cancel</a>
     </form>	
 	
 </div>

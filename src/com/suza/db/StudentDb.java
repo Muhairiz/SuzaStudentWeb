@@ -20,7 +20,7 @@ public class StudentDb {
 		
 		try {
 			Connection conn=StudentDb.getConnection();
-			PreparedStatement ps=conn.prepareStatement("insert into students(student_reg,first_name,middle_name,last_name,dob,addmission_year,completion_year,gender,phone,email,phisical,password,facult,recorded) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps=conn.prepareStatement("insert into students(student_reg,first_name,middle_name,last_name,dob,addmission_year,completion_year,gender,phone,email,phisical,password,facult,enrolled,recorded) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			
 			ps.setString(1, std.getReg());
 			ps.setString(2, std.getFirstname());
@@ -35,7 +35,8 @@ public class StudentDb {
 			ps.setString(11, std.getPhisical());
 			ps.setString(12, std.getPassword());
 			ps.setString(13, std.getFacult());
-			ps.setString(14, std.getRecorded());
+			ps.setString(14, std.getEnrolled());
+			ps.setString(15, std.getRecorded());
 			result =ps.executeUpdate();
 			conn.close();
 		}catch(Exception ex){ex.printStackTrace();}
@@ -64,6 +65,7 @@ public class StudentDb {
             	std.setPhisical(rs.getString(11));
             	std.setPassword(rs.getString(12));
             	std.setFacult(rs.getString(13));
+            	std.setEnrolled(rs.getString(14));
                 list.add(std);
             }
             con.close();
@@ -94,6 +96,7 @@ public class StudentDb {
 	            	std.setPhisical(rs.getString(11));
 	            	std.setPassword(rs.getString(12));
 	            	std.setFacult(rs.getString(13));
+	            	std.setEnrolled(rs.getString(14));
 	            }
 	            con.close();
 	        }catch(Exception ex){ex.printStackTrace();}
@@ -105,7 +108,7 @@ public class StudentDb {
 		int result=0;
         try{
             Connection con=StudentDb.getConnection();
-            PreparedStatement ps=con.prepareStatement("update students set first_name=?,middle_name=?,last_name=?,dob=?,addmission_year=?,completion_year=?,gender=?,phone=?,email=?,phisical=?,password=?,facult=?,recorded=? where student_reg=?");
+            PreparedStatement ps=con.prepareStatement("update students set first_name=?,middle_name=?,last_name=?,dob=?,addmission_year=?,completion_year=?,gender=?,phone=?,email=?,phisical=?,password=?,facult=?,enrolled=?,recorded=? where student_reg=?");
             
 			ps.setString(1, std.getFirstname());
 			ps.setString(2, std.getMiddlename());
@@ -119,8 +122,9 @@ public class StudentDb {
 			ps.setString(10, std.getPhisical());
 			ps.setString(11, std.getPassword());
 			ps.setString(12, std.getFacult());
-			ps.setString(13, std.getRecorded());
-			 ps.setString(14, std.getReg());
+			ps.setString(13, std.getEnrolled());
+			ps.setString(14, std.getRecorded());
+			 ps.setString(15, std.getReg());
             
             result=ps.executeUpdate();
 

@@ -115,4 +115,27 @@ public class CourseAssignDb {
 		return result;
 	}
 	
+	public static List<CourseAssign> getAssignedByStaff(String no){
+        List<CourseAssign> list=new ArrayList<CourseAssign>();
+        try{
+            Connection con=CourseAssignDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("select * from course_assignment where employee=?");
+            ps.setString(1,no);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){
+            	CourseAssign ca=new CourseAssign();
+            	ca.setId(rs.getInt(1));
+            	ca.setCourse(rs.getString(2));
+            	ca.setEmployee(rs.getString(3));
+            	ca.setFaculty(rs.getString(4));
+            	ca.setYear(rs.getInt(5));
+            	ca.setRecorder(rs.getString(6));
+                list.add(ca);
+            }
+            con.close();
+        }catch(Exception e){e.printStackTrace();}
+
+        return list;
+    }
+	
 }

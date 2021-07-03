@@ -18,6 +18,7 @@
 	<table class="table table-striped">
 		<thead>
 			<tr>
+				<th>Sn</th>
 				<th>Faculty Code</th>
 				<th>Faculty Name</th>
 				<th>Duration</th>
@@ -26,8 +27,12 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% for(Faculty flt:list){ %>
+			<%
+				int i=1;
+				for(Faculty flt:list){ 
+			%>
 			<tr>
+				<td><%= i %> <% i++; %></td>
 				<td><%= flt.getFacultyCode() %></td>
 				<td><%= flt.getFacultyName() %></td>
 				<td><%= flt.getDuration() %></td>
