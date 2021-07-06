@@ -3,7 +3,8 @@ package com.suza.model;
 public class CourseAssign {
 
 	private int id,year;
-	private String course,employee,faculty,recorder;
+	private String course,employee,faculty,enroll,recorder;
+	
 	public int getId() {
 		return id;
 	}
@@ -27,6 +28,12 @@ public class CourseAssign {
 	}
 	public void setFaculty(String faculty) {
 		this.faculty = faculty;
+	}
+	public String getEnroll() {
+		return enroll;
+	}
+	public void setEnroll(String enroll) {
+		this.enroll = enroll;
 	}
 	public String getRecorder() {
 		return recorder;

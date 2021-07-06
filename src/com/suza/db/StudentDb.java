@@ -124,7 +124,7 @@ public class StudentDb {
 			ps.setString(12, std.getFacult());
 			ps.setString(13, std.getEnrolled());
 			ps.setString(14, std.getRecorded());
-			 ps.setString(15, std.getReg());
+			ps.setString(15, std.getReg());
             
             result=ps.executeUpdate();
 
