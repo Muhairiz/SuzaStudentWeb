@@ -40,6 +40,7 @@ public class UpdateAssigned extends HttpServlet {
 		 String c_code=request.getParameter("c_code");
 		 String staff=request.getParameter("staff");
 		 String faculty=request.getParameter("faculty");
+		 String enroll=request.getParameter("enroll");
 		 String ac_year=request.getParameter("year");
 		 int year = Integer.parseInt(ac_year);
 		 String recorder=request.getParameter("recorder");
@@ -51,6 +52,7 @@ public class UpdateAssigned extends HttpServlet {
 		 crsa.setCourse(c_code);
 		 crsa.setEmployee(staff);
 		 crsa.setFaculty(faculty);
+		 crsa.setEnroll(enroll);
 		 crsa.setRecorder(recorder);
 		 crsa.setYear(year);
 		 crsa.setId(aid);

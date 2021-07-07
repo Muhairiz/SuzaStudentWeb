@@ -16,7 +16,11 @@
 	
 			<%
 				for(CourseAssign crsa:list){ %>
-				<a href="#" class="btn btn-primary btn-block"><% out.println(crsa.getCourse()); %></a><br>
+				<div  class ="row form-horizontal">
+					<div class="form-group col-md-6">
+						<a href="recordattendance.jsp?enroll=<%= crsa.getEnroll() %>" class="btn btn-primary btn-block"><% out.println(crsa.getCourse()); %></a>
+					</div>
+				</div> 
 			<% } %>
 	
 </div>

@@ -37,7 +37,7 @@
      		</div>
      		<div class="form-group col-md-6">  	 	
 			     <label>Enrollment:</label>
-			    <input class="form-control" type="text" name="enroll" >
+			    <input class="form-control" type="text" name="enroll" value="<%=crsa.getEnroll() %>">
      		</div>
      	</div>
      	

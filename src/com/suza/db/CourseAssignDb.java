@@ -25,12 +25,13 @@ public class CourseAssignDb {
 		
 		try {
 			Connection conn=CourseAssignDb.getConnection();
-			PreparedStatement ps=conn.prepareStatement("insert into course_assignment(course,employee,faculty,year,recorder) values(?,?,?,?,?)");
+			PreparedStatement ps=conn.prepareStatement("insert into course_assignment(course,employee,faculty,enroll,year,recorder) values(?,?,?,?,?,?)");
 			ps.setString(1, crsa.getCourse());
 			ps.setString(2, crsa.getEmployee());
 			ps.setString(3, crsa.getFaculty());
-			ps.setInt(4, crsa.getYear());
-			ps.setString(5, crsa.getRecorder());
+			ps.setString(4, crsa.getFaculty());
+			ps.setInt(5, crsa.getYear());
+			ps.setString(6, crsa.getRecorder());
 			result =ps.executeUpdate();
 			conn.close();
 		}catch(Exception ex){ex.printStackTrace();}
@@ -50,8 +51,9 @@ public class CourseAssignDb {
             	ca.setCourse(rs.getString(2));
             	ca.setEmployee(rs.getString(3));
             	ca.setFaculty(rs.getString(4));
-            	ca.setYear(rs.getInt(5));
-            	ca.setRecorder(rs.getString(6));
+            	ca.setEnroll(rs.getString(5));
+            	ca.setYear(rs.getInt(6));
+            	ca.setRecorder(rs.getString(7));
                 list.add(ca);
             }
             con.close();
@@ -73,8 +75,9 @@ public class CourseAssignDb {
 	            	ca.setCourse(rs.getString(2));
 	            	ca.setEmployee(rs.getString(3));
 	            	ca.setFaculty(rs.getString(4));
-	            	ca.setYear(rs.getInt(5));
-	            	ca.setRecorder(rs.getString(6));
+	            	ca.setEnroll(rs.getString(5));
+	            	ca.setYear(rs.getInt(6));
+	            	ca.setRecorder(rs.getString(7));
 	            }
 	            con.close();
 	        }catch(Exception ex){ex.printStackTrace();}
@@ -99,14 +102,15 @@ public class CourseAssignDb {
 		int result=0;
         try{
             Connection con=CourseAssignDb.getConnection();
-            PreparedStatement ps=con.prepareStatement("update course_assignment set course=?,employee=?,faculty=?,year=?,recorder=? where assign_id=?");
+            PreparedStatement ps=con.prepareStatement("update course_assignment set course=?,employee=?,faculty=?,enroll=?,year=?,recorder=? where assign_id=?");
             
             ps.setString(1, crsa.getCourse());
 			ps.setString(2, crsa.getEmployee());
 			ps.setString(3, crsa.getFaculty());
-			ps.setInt(4, crsa.getYear());
-			ps.setString(5, crsa.getRecorder());
-			ps.setInt(6, crsa.getId());
+			ps.setString(4, crsa.getEnroll());
+			ps.setInt(5, crsa.getYear());
+			ps.setString(6, crsa.getRecorder());
+			ps.setInt(7, crsa.getId());
             
             result=ps.executeUpdate();
 
@@ -115,12 +119,12 @@ public class CourseAssignDb {
 		return result;
 	}
 	
-	public static List<CourseAssign> getAssignedByStaff(String no){
+	public static List<CourseAssign> getAssignedByStaff(String emp){
         List<CourseAssign> list=new ArrayList<CourseAssign>();
         try{
             Connection con=CourseAssignDb.getConnection();
             PreparedStatement ps=con.prepareStatement("select * from course_assignment where employee=?");
-            ps.setString(1,no);
+            ps.setString(1,emp);
             ResultSet rs=ps.executeQuery();
             while(rs.next()){
             	CourseAssign ca=new CourseAssign();
@@ -128,8 +132,9 @@ public class CourseAssignDb {
             	ca.setCourse(rs.getString(2));
             	ca.setEmployee(rs.getString(3));
             	ca.setFaculty(rs.getString(4));
-            	ca.setYear(rs.getInt(5));
-            	ca.setRecorder(rs.getString(6));
+            	ca.setEnroll(rs.getString(5));
+            	ca.setYear(rs.getInt(6));
+            	ca.setRecorder(rs.getString(7));
                 list.add(ca);
             }
             con.close();
