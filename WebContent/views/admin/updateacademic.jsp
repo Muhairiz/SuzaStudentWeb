@@ -17,7 +17,7 @@
 <div class="content">		
 	<h1 class="text-center">Update Staff Form</h1>
 	
-	<form action="../../UpdateEmployee" method="POST" class="form">
+	<form action="../../UpdateEmployee" method="POST" name="myForm" class="form">
 	
 		<input type="hidden" name="id" value="<%=emp.getId() %>">
      	<div class ="row form-horizontal">

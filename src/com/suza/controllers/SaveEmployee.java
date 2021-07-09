@@ -1,8 +1,8 @@
 package com.suza.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,7 +43,7 @@ public class SaveEmployee extends HttpServlet {
 		 String dob=request.getParameter("dob");
 		 String qualification=request.getParameter("qualification");
 		 String phone=request.getParameter("phone");
-		 String email=request.getParameter("email");
+		 String email=request.getParameter("emailS");
 		 String gender=request.getParameter("gender");
 		 String pass=request.getParameter("password");
 		 String roll=request.getParameter("roll");
@@ -68,14 +68,13 @@ public class SaveEmployee extends HttpServlet {
 		 emp.setPhisical(phisical);
 		 emp.setRecorded(recorder);
 		 
-		 
 		 int result=EmployeeDb.saveEmployee(emp);
+		 
 	        if(result>0){
-	        	response.sendRedirect("views/admin/viewacademic.jsp");
+	        	response.sendRedirect("views/admin/registeracademic.jsp?success= Data saved Successfully");
 	        }else{
 	        	
-	            response.sendRedirect("views/admin/registeracademic.jsp");
-	            out.println("<div><div class='alert alert-danger col-md-3'><strong>Invalid username or password!</strong></div></div>");
+	            response.sendRedirect("views/admin/registeracademic.jsp?error= Sorry! unable to save record");
 	        }
 
 	        out.close();

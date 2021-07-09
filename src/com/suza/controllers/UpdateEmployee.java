@@ -70,8 +70,7 @@ public class UpdateEmployee extends HttpServlet {
 		 int result=EmployeeDb.updateEmployee(emp);
 		 
 	        if(result>0){
-	            out.print("<p>Record updated successfully!</p>");
-	            response.sendRedirect("views/admin/viewacademic.jsp");
+	            response.sendRedirect("views/admin/viewacademic.jsp?success= Record updated successfully!");
 	        }else{
 	            out.println("Sorry! unable to save record");
 	            response.sendRedirect("views/admin/updateacademic.jsp");

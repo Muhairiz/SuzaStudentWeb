@@ -8,10 +8,19 @@
 <body>
 	<%
 		List<Employee> list=EmployeeDb.getAllEmployee();
+	
+		String successMessage = request.getParameter("success");
+		String success;
+		if(successMessage == null){
+			success = " ";
+		}else{
+			success = successMessage;
+		}
 	%>
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
-<div class="content">		
+<div class="content">
+	<h5 class="text-success"><%= success %></h5>	
 	<div class ="row form-horizontal">
 	<div class="col-md-3">
 		<form action="#" method="post">
@@ -69,7 +78,7 @@
 				<td><%= emp.getDepartment() %></td>
 				<td><%= emp.getPhisical() %></td>
 				<td><a class="btn btn-danger" href="../../DeleteEmployee?id=<%= emp.getId() %>"><i class="fa fa-trash" ></i></a></td>
-				<td><a href="updateacademic.jsp?id=<%= emp.getId() %>"><i class="fa fa-edit"></i></a></td>
+				<td><a class="btn btn-primary" href="updateacademic.jsp?id=<%= emp.getId() %>"><i class="fa fa-edit"></i></a></td>
 			</tr>
 			<% } %>
 		</tbody>

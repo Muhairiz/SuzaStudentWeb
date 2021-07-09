@@ -4,6 +4,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="../../bootstrap/js/jquery-2.1.4.min.js"></script>
 	<script src="../../bootstrap/js/myFunctions.js"></script>
+	<script src="../../bootstrap/jquery-validation/dist/jquery.validate.min.js"></script>
+	<script src="../../bootstrap/jquery-validation/dist/additional-methods.min.js"></script>
 	<link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
 	<link rel="stylesheet" href="../../bootstrap/css/styles.css">
 	<link rel="stylesheet" href="../../bootstrap/css/font-awesome.min.css">

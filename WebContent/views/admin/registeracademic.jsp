@@ -9,67 +9,88 @@
 <body>
 	<%
 		List<Department> list=DepartmentDb.getAllDepartment();
+	
+		String errorMessage = request.getParameter("error");
+		String error;
+		
+		if(errorMessage == null){
+			error = " ";
+		}else{
+			error = errorMessage;
+		}
+		
+		String successMessage = request.getParameter("success");
+		String success;
+		if(successMessage == null){
+			success = " ";
+		}else{
+			success = successMessage;
+		}
+		
 	%>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 	<%@ include file="../../includes/header.jsp" %>	
-<div class="content">	
-		<h1 class="text-center">Staff Registration Form</h1>
-		
-		<form action="../../SaveEmployee" method="POST" class="form">	
+	
+<div class="content">
+ <h5 class="text-danger"><%= error %></h5>
+ <h5 class="text-success"><%= success %></h5>
+	 <h1 class="text-center">Staff Registration Form</h1>	
+	 
+	 <form name="myForm" action="../../SaveEmployee" method="POST">	
        	 <div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Employee Number:</label>
-			     <input class="form-control" type="text" name="emp_no">
+			     <label> Employee ID: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="emp_no" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>First Name:</label>
-			     <input class="form-control" type="text" name="fname">
+			     <label>First Name: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="fname" id="fname" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label>Middle Name:</label>
-			     <input class="form-control" type="text" name="mname">
+			     <label>Middle Name: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="mname" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Last Name:</label>
-			     <input class="form-control" type="text" name="lname" >
+			     <label> Last Name: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="lname" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
 			     <label> Date of Birth:</label>
-			     <input class="form-control" type="date" name="dob" >
+			     <input class="form-control" type="date" name="dob">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Qualification:</label>
-			     <input class="form-control" type="text" name="qualification">
+			     <label> Qualification: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="qualification" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Phone:</label>
-			     <input class="form-control" type="text" name="phone" >
+			     <label> Phone: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="phone" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Email Address:</label>
-			     <input class="form-control" type="text" name="email" >
+			     <label>Email Address: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="text" name="emailS" autocomplete="off">
      		</div>
      	</div>
      	<div  class ="row form-horizontal">
 			<div class="form-group col-md-6">  	 	
 			     <label> Gender:</label>
 			 <div class="form-group col-md-4">  	 	
-			     <input type="radio" name="gender" value="Male">   Male				 	
+			     <input type="radio" name="gender" value="Male" checked>   Male				 	
 			     <input type="radio" name="gender" value="Female">  Female
 			 </div>
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Password:</label>
-			     <input class="form-control" type="password" name="password">
+			     <label> Password: <span class="text-danger text-lg">*</span></label>
+			     <input class="form-control" type="password" name="password" autocomplete="off">
      		</div>
      	</div>
      	
@@ -94,14 +115,14 @@
      	<div class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
 			     <label>Physical Address:</label>
-			     <input class="form-control" type="text" name="phisical" >
+			     <input class="form-control" type="text" name="phisical" autocomplete="off">
      		</div>
      	</div>
      	<input class="form-control" type="hidden" name="recorder" value="<%=recorder %>">
      	
-     	<input class="btn btn-success" type="submit" name="save_user" value="SAVE">
+     	<button class="btn btn-success" type="submit">SAVE</button>
     </form>	
-	</div>
+</div>
 	 
 <%@ include file="../../includes/footer.jsp"%>
 </body>

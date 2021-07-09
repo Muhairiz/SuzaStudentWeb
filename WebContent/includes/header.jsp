@@ -10,7 +10,7 @@
 		
 	</div>
 
-	<a href="../../Logout">
+	<a href="../../Logout" onclick="warnig-alert('are You?');">
 		<span class="navbar-brand" id="lg-out"><i class="fa fa-power-off"></i> Logout</span>
 	</a>
 </div>
@@ -25,4 +25,24 @@
 			headerNav.classList.remove("sticky");
 		}
 	};
+	
+	$(function(){
+		$("form[name= 'myForm']").validate({
+			rules: {
+				fname: "required",
+				lname: "required",
+			},
+			
+			messages: {
+				fname: "Please enter fname",
+				lname: "Please enter lname",
+			},
+			
+			submitHandler: function(form){
+				form.submit();
+			}
+		});
+	});
+	
+	
 </script>

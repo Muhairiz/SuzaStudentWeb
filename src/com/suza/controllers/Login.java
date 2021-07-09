@@ -39,7 +39,7 @@ public class Login extends HttpServlet {
   	  	PrintWriter out=response.getWriter();
 
 	String username = request.getParameter("username");
-	String password = request.getParameter("password");
+	String password = request.getParameter("pass");
 
 	EmployeeDb edb=new EmployeeDb();
 	try {
