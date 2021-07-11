@@ -21,7 +21,7 @@
 	
 		<input type="hidden" name="id" value="<%=crsa.getId() %>">
      	<div class ="row form-horizontal">
-       	 	<div class="form-group col-md-6">  	 	
+       	 	<div class="form-group col-md-6">	
 			     <label> Course Code: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="c_code" value="<%=crsa.getCourse() %>">
      		</div>

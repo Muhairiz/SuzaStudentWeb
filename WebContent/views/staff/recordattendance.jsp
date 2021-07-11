@@ -17,15 +17,15 @@
 	%>
 <div class="content">
 <h1>Attendance Form</h1>	
-<form action="../../RecordAttendance" method="POST" class="form">
+<form action="../../RecordAttendance" method="POST" name="myForm" class="form">
 	
 	<div class ="row form-horizontal">
 			<div class="form-group col-md-3">  	 	
-			     <label> Week:</label>
+			     <label>Week: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="number" min=1 max=20 name="week">
      		</div>
      		<div class="form-group col-md-3">  	 	
-			     <label> Attendance Date:</label>
+			     <label> Attendance Date:  <span class="text-danger">*</span></label>
 			     <input class="form-control" type="date" name="att_date" >
      		</div>
      		<div class="form-group col-md-3">  	 	
@@ -38,22 +38,32 @@
      		</div>
      		<input  type="hidden" name="recorder" value="<%= recorder %>" >
      	</div>
-	<%
-		for(Student std:list){ %>
-		<div class ="row form-horizontal">
+     	
+     	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-3">  	 	
 			     <label> Registration Number:</label>
-			     <input class="form-control" type="text" name="regNo" value="<%= std.getReg() %>" readonly>
      		</div>
      		<div class="form-group col-md-4">  	 	
 			     <label>Full Name:</label>
-			     <input class="form-control" type="text" name="fname" value="<%= std.getFirstname()+" "+std.getMiddlename()+" "+std.getLastname() %>" readonly>
+			</div>
+     		<div class="form-group col-md-5">  	 	
+			     <label> Status: <span class="text-danger">*</span></label>
+     		</div>
+     	</div>
+     	
+	<%	
+		for(Student std:list){ %>
+		<div class ="row form-horizontal">
+       	 	<div class="form-group col-md-3">  	 	
+			     <input class="form-control" type="text" name="regNo" value="<%= std.getReg() %>" readonly>
+     		</div>
+     		<div class="form-group col-md-4">  	 	
+			     <input class="form-control" type="text" name="full_name" value="<%= std.getFirstname()+" "+std.getMiddlename()+" "+std.getLastname() %>" readonly>
      		</div>
      		<div class="form-group col-md-5">  	 	
-			     <label> Status:</label>
 			     <div class="form-group col-md-4">
-			     	<input type="checkbox" name="status" value="Attend"> Attend    
-			     	<input type="checkbox" name="status" value="Absent"> Absent
+			     	Attend <input type="checkbox" name="status" value="Attend">     
+			        Absent <input type="checkbox" name="status" value="Absent">
 			     </div>
      		</div>
      	</div>

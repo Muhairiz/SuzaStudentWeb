@@ -46,7 +46,7 @@ public class RecordAttendance extends HttpServlet {
 		String recorder = request.getParameter("recorder");
 		
 		String[] reg = request.getParameterValues("regNo");
-		String[] name = request.getParameterValues("fname");
+		String[] name = request.getParameterValues("full_name");
 		String[] status =request.getParameterValues("status");
 		
 		for(int i=0; i<reg.length; i++) {

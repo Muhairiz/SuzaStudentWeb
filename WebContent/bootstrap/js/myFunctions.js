@@ -136,6 +136,9 @@ $().ready(function(){
 			duration: "required",
 			category: "required",
 			flt_code: "required",
+			week: "required",
+			status: "required",
+			att_date: "required"
 		},
 		
 		
@@ -228,6 +231,9 @@ $().ready(function(){
 			duration: "please enter course duration",
 			category: "please enter course category",	
 			flt_code: "please enter faculty code",
+			week: "please enter week number",
+			status: "please provide status",
+			att_date: "please provide a date"
 		},
 		
 		submitHandler: function(form){
