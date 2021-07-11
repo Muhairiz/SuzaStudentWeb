@@ -16,7 +16,7 @@
 <div class="content">		
 	<h1 class="text-center">Course Assign Form</h1>
 	
-	<form action="../../SaveAssignCourse" method="POST" class="form">
+	<form action="../../SaveAssignCourse" method="POST" name="myForm" class="form">
 		
        	 <div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
@@ -48,14 +48,14 @@
 				</select>
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Enroll:</label>
-			    <input class="form-control" type="text" name="enroll">
+			     <label>Enroll: <span class="text-danger">*</span></label>
+			    <input class="form-control" type="text" name="enrolling">
      		</div>
      	</div>
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label>Academic Year:</label>
-			    <input class="form-control" type="text" name="year">
+			     <label>Academic Year: <span class="text-danger">*</span></label>
+			    <input class="form-control" type="text" name="academic" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
 			     <label>Recorder:</label>

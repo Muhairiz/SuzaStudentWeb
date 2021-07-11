@@ -29,7 +29,7 @@ public class CourseAssignDb {
 			ps.setString(1, crsa.getCourse());
 			ps.setString(2, crsa.getEmployee());
 			ps.setString(3, crsa.getFaculty());
-			ps.setString(4, crsa.getFaculty());
+			ps.setString(4, crsa.getEnroll());
 			ps.setInt(5, crsa.getYear());
 			ps.setString(6, crsa.getRecorder());
 			result =ps.executeUpdate();

@@ -37,8 +37,8 @@ public class SaveFaculty extends HttpServlet {
 		response.setContentType("text/html");
 	     PrintWriter out=response.getWriter();
 		 
-		 String f_code=request.getParameter("f_code");
-		 String f_name=request.getParameter("f_name");
+		 String f_code=request.getParameter("flt_code");
+		 String f_name=request.getParameter("flt_name");
 		 String duration=request.getParameter("duration");
 		 String recorder=request.getParameter("recorder");
 		 

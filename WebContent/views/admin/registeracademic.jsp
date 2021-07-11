@@ -39,22 +39,22 @@
 	 <form name="myForm" action="../../SaveEmployee" method="POST">	
        	 <div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Employee ID: <span class="text-danger text-lg">*</span></label>
+			     <label> Employee ID: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="emp_no" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>First Name: <span class="text-danger text-lg">*</span></label>
+			     <label>First Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="fname" id="fname" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label>Middle Name: <span class="text-danger text-lg">*</span></label>
+			     <label>Middle Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="mname" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Last Name: <span class="text-danger text-lg">*</span></label>
+			     <label> Last Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="lname" autocomplete="off">
      		</div>
      	</div>
@@ -65,18 +65,18 @@
 			     <input class="form-control" type="date" name="dob">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Qualification: <span class="text-danger text-lg">*</span></label>
+			     <label> Qualification: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="qualification" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
-     		<div class="form-group col-md-6">  	 	
-			     <label> Phone: <span class="text-danger text-lg">*</span></label>
+     		<div class="form-group col-md-6">
+			     <label> Phone: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="phone" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Email Address: <span class="text-danger text-lg">*</span></label>
+			     <label>Email Address: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="emailS" autocomplete="off">
      		</div>
      	</div>
@@ -89,7 +89,7 @@
 			 </div>
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Password: <span class="text-danger text-lg">*</span></label>
+			     <label> Password: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="password" name="password" autocomplete="off">
      		</div>
      	</div>

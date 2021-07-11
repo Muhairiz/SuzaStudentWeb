@@ -17,7 +17,7 @@
 <div class="content">		
 	<h1 class="text-center">Update Course Form</h1>
 	
-	<form action="../../UpdateCourse" method="POST" class="form">
+	<form action="../../UpdateCourse" method="POST" name="myForm" class="form">
 	
 		<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
@@ -25,36 +25,36 @@
 			     <input class="form-control" type="text" name="c_code" value="<%=crs.getCourseCode() %>" readonly>
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Course Name:</label>
+			     <label>Course Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="c_name" value="<%=crs.getCourseName() %>">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label>Semester:</label>
+			     <label>Semester: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="semester" value="<%=crs.getSemester() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Academic Year:</label>
+			     <label>Academic Year: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="academic" value="<%=crs.getAcademicYear() %>" >
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Duration:</label>
+			     <label> Duration: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="duration" value="<%=crs.getDuration() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Category:</label>
+			     <label>Category: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="category" value="<%=crs.getCateory() %>">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Credit:</label>
+			     <label> Credit: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="credit" value="<%=crs.getCredit() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	

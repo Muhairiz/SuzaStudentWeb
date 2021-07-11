@@ -39,9 +39,9 @@ public class UpdateAssigned extends HttpServlet {
 		 
 		 String c_code=request.getParameter("c_code");
 		 String staff=request.getParameter("staff");
-		 String faculty=request.getParameter("faculty");
-		 String enroll=request.getParameter("enroll");
-		 String ac_year=request.getParameter("year");
+		 String faculty=request.getParameter("facult");
+		 String enroll=request.getParameter("enrolling");
+		 String ac_year=request.getParameter("academic");
 		 int year = Integer.parseInt(ac_year);
 		 String recorder=request.getParameter("recorder");
 		 String id = request.getParameter("id");

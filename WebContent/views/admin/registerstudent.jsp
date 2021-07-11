@@ -17,40 +17,40 @@
 	<form name="myForm" action="../../SaveStudent" method="POST" class="form">	
        	 <div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Registration Number: <span class="text-danger text-lg">*</span></label>
+			     <label> Registration Number: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="reg_no" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>First Name: <span class="text-danger text-lg">*</span></label>
+			     <label>First Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="fname" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label>Middle Name: <span class="text-danger text-lg">*</span></label>
+			     <label>Middle Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="mname" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Last Name: <span class="text-danger text-lg">*</span></label>
+			     <label> Last Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="lname" autocomplete="off" >
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Date of Birth: <span class="text-danger text-lg">*</span></label>
+			     <label> Date of Birth: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="date" name="dob" >
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Admission Year: <span class="text-danger text-lg">*</span></label>
+			     <label> Admission Year: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="admission" autocomplete="off">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Completion Year: <span class="text-danger text-lg">*</span></label>
+			     <label> Completion Year: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="completion" autocomplete="off">
      		</div>    		
      		<div class="form-group col-md-6">  	 	
@@ -64,7 +64,7 @@
      	</div>
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Phone: <span class="text-danger text-lg">*</span></label>
+			     <label> Phone: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="phone" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">  	 	
@@ -79,7 +79,7 @@
 			     <input class="form-control" type="text" name="phisical" autocomplete="off">
      		</div>
      		<div class="form-group col-md-6">
-			     <label>Password: <span class="text-danger text-lg">*</span></label>
+			     <label>Password: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="password" autocomplete="off">
      		</div>
      	</div>
@@ -94,7 +94,7 @@
 				</select>
      		</div>
      		<div class="form-group col-md-6">
-			     <label>Enrolling: <span class="text-danger text-lg">*</span></label>
+			     <label>Enrolling: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="enrolling" autocomplete="off">
      		</div>
      	</div>

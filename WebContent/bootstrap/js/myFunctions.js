@@ -61,6 +61,16 @@ $().ready(function(){
 				required: true,
 				pattern: "^[a-zA-Z_]*$",
 			},
+			c_name: {
+				required: true,
+				pattern: "^[a-zA-Z_ ]*$",
+			},
+			
+			flt_name: {
+				required: true,
+				pattern: "^[a-zA-Z_ ]*$",
+			},
+			
 			emp_no: {
 				required: true,
 			},
@@ -75,14 +85,28 @@ $().ready(function(){
 				pattern: "[0-9]{4}",
 			},
 			
+			academic: {
+				required: true,
+				pattern: "[0-9]{4}",
+			},
+			
 			completion: {
 				required: true,
 				pattern: "[0-9]{4}",
+			},
+			credit: {
+				required: true,
+				pattern: "[0-9]+",
 			},
 			
 			password: {
 				required: true,
 				minlength: 5,
+			},
+			
+			semester: {
+				required: true,
+				pattern: "[1-2]{1}",
 			},
 			
 			enrolling: {
@@ -101,10 +125,17 @@ $().ready(function(){
 			dob: {
 				required: true,
 			},
+			facult: "required",
 			qualification: "required",
 			username: "required",
 			pass: "required",
 			reg_no: "required",
+			dep_name: "required",
+			dep_code: "required",
+			c_code: "required",
+			duration: "required",
+			category: "required",
+			flt_code: "required",
 		},
 		
 		
@@ -121,6 +152,17 @@ $().ready(function(){
 				required: "please enter the middlename",
 				pattern: "name must be contain alphabet only"
 			},
+			
+			c_name: {
+				required: "please enter course name",
+				pattern: "invalid course name format",
+			},
+			
+			flt_name: {
+				required: "please enter faculty name",
+				pattern: "invalid facult name format",
+			},
+			
 			emp_no: {
 				required: "please enter the Employee ID",
 			},
@@ -128,6 +170,11 @@ $().ready(function(){
 			phone: {
 				required: "please enter Phone number",
 				pattern: "invalid phone number"
+			},
+			
+			semester: {
+				required: "please provide semester",
+				pattern: "invalid semester number"
 			},
 			
 			email:{
@@ -147,10 +194,18 @@ $().ready(function(){
 				required: "please enter addmission year",
 				pattern: "invalid year format",
 			},
-			
 			completion: {
 				required: "please enter addmission year",
 				pattern: "invalid year format",
+			},
+			academic: {
+				required: "please enter academic year",
+				pattern: "year must be contain 4 numbers",
+			},
+			
+			credit: {
+				required: "please enter course credit",
+				pattern: "invalid credit format",
 			},
 			
 			enrolling: {
@@ -159,13 +214,20 @@ $().ready(function(){
 			
 			password: {
 				required: "please enter password",
-				minlength: "invalid pasword",		
+				minlength: "pasword must be contain atleat 5 characters",		
 			},
 			
 			username: "please enter username",
 			reg_no: "please enter registration number",
 			pass: "please enter password",
-			qualification: "please enter qualification",		
+			qualification: "please enter qualification",
+			facult: "please enter facult",
+			dep_name: "please enter department name",
+			dep_code: "please enter department code",
+			c_code: "please enter course code",	
+			duration: "please enter course duration",
+			category: "please enter course category",	
+			flt_code: "please enter faculty code",
 		},
 		
 		submitHandler: function(form){

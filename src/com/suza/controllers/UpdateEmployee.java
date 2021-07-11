@@ -44,7 +44,7 @@ public class UpdateEmployee extends HttpServlet {
 		 String phone=request.getParameter("phone");
 		 String email=request.getParameter("email");
 		 String gender=request.getParameter("gender");
-		 String pass=request.getParameter("pass");
+		 String pass=request.getParameter("password");
 		 String roll=request.getParameter("roll");
 		 String department=request.getParameter("department");
 		 String address=request.getParameter("address");

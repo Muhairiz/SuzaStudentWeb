@@ -15,38 +15,38 @@
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 <div class="content">		
-	<h1 class="text-center">Update Staff Form</h1>
+	<h1 class="text-center">Update Student's Form</h1>
 	
-	<form action="../../UpdateStudent" method="POST" class="form">
+	<form action="../../UpdateStudent" method="POST" name="myForm" class="form">
 	
 		<input type="hidden" name="reg_no" value="<%=std.getReg() %>">
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> First Name:</label>
+			     <label> First Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="fname" value="<%=std.getFirstname() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Middle Name:</label>
+			     <label> Middle Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="mname" value="<%=std.getMiddlename() %>">
      		</div>
      	</div>
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Last Name:</label>
+			     <label> Last Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="lname" value="<%=std.getLastname() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Date of Birth:</label>
+			     <label> Date of Birth: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="date" name="dob" value="<%=std.getDob() %>">
      		</div>
      	</div>
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Admission Year:</label>
+			     <label> Admission Year: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="admission" value="<%=std.getAdmissionYear() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Completion Year:</label>
+			     <label> Completion Year: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="completion" value="<%=std.getComplitionYear() %>">
      		</div>
      	</div>
@@ -54,12 +54,12 @@
      		<div class="form-group col-md-6">  	 	
 			     <label> Gender:</label>
 			 <div class="form-group col-md-4">  	 	
-			     <input type="radio" name="gender" value="Male">   Male				 	
+			     <input type="radio" name="gender" value="Male" checked>   Male				 	
 			     <input type="radio" name="gender" value="Female">  Female
 			 </div>
      		</div>
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Phone:</label>
+			     <label> Phone: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="phone" value="<%=std.getPhone() %>">
      		</div>
      	</div>
@@ -75,17 +75,17 @@
      	</div>
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Password:</label>
+			     <label> Password: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="password" value="<%=std.getPassword() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label> Faculty:</label>
+			     <label> Faculty: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="facult" value="<%=std.getFacult() %>">
      		</div>
      	</div>
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Enrolling:</label>
+			     <label> Enrolling: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="enrolling" value="<%=std.getEnrolled() %>">
      		</div>
      	</div>

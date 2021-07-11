@@ -28,7 +28,7 @@
 		</form>
 	</div>
 	<div class="col-md-6">	
-		<h1 class="text-center">List of Academic Staff</h1>
+		<h1 class="text-center">List of Employees</h1>
 	</div>
 	<div class="col-md-3">
 		<input type="button" value="Print" onclick="printReport()" >

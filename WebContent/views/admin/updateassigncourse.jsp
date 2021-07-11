@@ -17,34 +17,34 @@
 <div class="content">		
 	<h1 class="text-center">Update Course Assigned Form</h1>
 	
-	<form action="../../UpdateAssigned" method="POST" class="form">
+	<form action="../../UpdateAssigned" method="POST" name="myForm" class="form">
 	
 		<input type="hidden" name="id" value="<%=crsa.getId() %>">
      	<div class ="row form-horizontal">
        	 	<div class="form-group col-md-6">  	 	
-			     <label> Course Code:</label>
+			     <label> Course Code: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="c_code" value="<%=crsa.getCourse() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Academic Staff:</label>
+			     <label>Academic Staff: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="staff" value="<%=crsa.getEmployee() %>">
      		</div>
      	</div>
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label> Faculty:</label>
-			     <input class="form-control" type="text" name="faculty" value="<%=crsa.getFaculty() %>">
+			     <label> Faculty: <span class="text-danger">*</span></label>
+			     <input class="form-control" type="text" name="facult" value="<%=crsa.getFaculty() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
-			     <label>Enrollment:</label>
-			    <input class="form-control" type="text" name="enroll" value="<%=crsa.getEnroll() %>">
+			     <label>Enrollment: <span class="text-danger">*</span></label>
+			    <input class="form-control" type="text" name="enrolling" value="<%=crsa.getEnroll() %>">
      		</div>
      	</div>
      	
      	<div  class ="row form-horizontal">
      		<div class="form-group col-md-6">  	 	
-			     <label>Academic Year:</label>
-			    <input class="form-control" type="text" name="year" value="<%=crsa.getYear() %>">
+			     <label>Academic Year: <span class="text-danger">*</span></label>
+			    <input class="form-control" type="text" name="academic" value="<%=crsa.getYear() %>">
      		</div>
      		<div class="form-group col-md-6">  	 	
 			     <label>Recorder:</label>

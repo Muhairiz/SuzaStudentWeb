@@ -17,16 +17,19 @@
 <div class="content">		
 	<h1 class="text-center">Update Faculty Form</h1>
 	
-	<form action="../../UpdateFaculty" method="POST" class="form">
+	<form action="../../UpdateFaculty" method="POST" name="myForm" class="form">
 	
-		<input type="hidden" name="flt_code" value="<%=flt.getFacultyCode() %>">
      	<div class ="row form-horizontal">
-       	 	<div class="form-group col-lg-12 col-md-12">  	 	
-			     <label> Faculty Name:</label>
+     		<div class="form-group col-md-4">  	 	
+			     <label> Faculty Code: <span class="text-danger">*</span></label>
+			     <input class="form-control" type="text" name="flt_code" value="<%=flt.getFacultyCode() %>" readonly>
+     		</div>
+       	 	<div class="form-group col-md-4">  	 	
+			     <label> Faculty Name: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="flt_name" value="<%=flt.getFacultyName() %>">
      		</div>
-     		<div class="form-group col-lg-12 col-md-12">  	 	
-			     <label> Duration:</label>
+     		<div class="form-group col-md-4">  	 	
+			     <label> Duration: <span class="text-danger">*</span></label>
 			     <input class="form-control" type="text" name="duration" value="<%=flt.getDuration() %>">
      		</div>
      	</div>

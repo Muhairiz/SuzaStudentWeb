@@ -54,7 +54,7 @@ public class UpdateFaculty extends HttpServlet {
 	            response.sendRedirect("views/admin/viewfaculty.jsp");
 	        }else{
 	            out.println("Sorry! unable to save record");
-	            response.sendRedirect("views/admin/updatedepartment.jsp");
+	            response.sendRedirect("views/admin/updatefaculty.jsp");
 	        }
 	}
 
