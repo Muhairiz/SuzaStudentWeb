@@ -148,7 +148,7 @@ $().ready(function(){
 				pattern: "name must be contain alphabet only"
 			},
 			lname: {
-				required: "please enter the firstname",
+				required: "please enter the lastname",
 				pattern: "name must be contain alphabet only"
 			},
 			mname: {

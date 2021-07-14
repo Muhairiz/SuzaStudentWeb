@@ -13,6 +13,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
     <body>
+    <%
+		String errorMessage = request.getParameter("error");
+		String error;
+		
+		if(errorMessage == null){
+			error = " ";
+		}else{
+			error = errorMessage;
+		}
+	%>
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -33,6 +43,7 @@
                                                 <label class="large">Password</label>
                                                 <input class="form-control py-3" type="password" name="pass" placeholder="Enter password" />
                                             </div>
+                                            <p class="text-center text-danger"><%= error %></p>
                                             <div class="form-group mt-4 mb-0">
                                                 <button class="btn btn-success btn-block">Login</button>
                                             </div>

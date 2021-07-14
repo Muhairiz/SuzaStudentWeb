@@ -36,8 +36,6 @@ public class Login extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		response.setContentType("text/html");
-  	  	PrintWriter out=response.getWriter();
-
 	String username = request.getParameter("username");
 	String password = request.getParameter("pass");
 
@@ -66,7 +64,7 @@ public class Login extends HttpServlet {
 			}
 			
 			}else {
-				out.println("<p align='center'>Invalid username or password</p>");
+				 response.sendRedirect("login.jsp?error= Invalid username or password");
 			}
 		
 		
