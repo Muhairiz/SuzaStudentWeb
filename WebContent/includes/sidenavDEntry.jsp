@@ -4,7 +4,7 @@
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="#">Add Result</a>
+    <a href="result.jsp">Record Result</a>
     <a href="#">Manage Result</a>
   </div> 
 </div>

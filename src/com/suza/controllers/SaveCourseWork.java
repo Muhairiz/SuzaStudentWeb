@@ -1,8 +1,8 @@
 package com.suza.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.suza.db.AttendanceDb;
-import com.suza.model.Attendance;
+import com.suza.db.CourseWorkDb;
+import com.suza.model.CourseWork;
 
 /**
- * Servlet implementation class RecordAttendance
+ * Servlet implementation class SaveCourseWork
  */
-@WebServlet("/RecordAttendance")
-public class RecordAttendance extends HttpServlet {
+@WebServlet("/SaveCourseWork")
+public class SaveCourseWork extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RecordAttendance() {
+    public SaveCourseWork() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,43 +35,37 @@ public class RecordAttendance extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		PrintWriter pw = response.getWriter();
-		response.setContentType("text/html");
 		
-		List<Attendance> attList =new ArrayList<Attendance>();
-		String week = request.getParameter("week");
-		int weeks =Integer.parseInt(week);
-		String att_date =request.getParameter("att_date");
+		List<CourseWork> cwList =new ArrayList<CourseWork>();
+		
+		String cw_date =request.getParameter("cw_date");
 		String course = request.getParameter("course");
 		String recorder = request.getParameter("recorder");
-		
-		
+				
 		String[] reg = request.getParameterValues("regNo");
-		String[] name = request.getParameterValues("full_name");
-		String[] status =request.getParameterValues("status");
+		String[] score =request.getParameterValues("score");
+		
+		double[] scores = Arrays.stream(score).mapToDouble(Double::parseDouble).toArray();
 		
 		for(int i=0; i<reg.length; i++) {
-			Attendance att = new Attendance();
-			att.setWeek(weeks);
-			att.setDate(att_date);
-			att.setCourse(course);
-			att.setRecorded(recorder);
-			att.setStudentReg(reg[i]);
-			att.setStudentName(name[i]);
-			att.setStatus(status[i]);
+			CourseWork cw = new CourseWork();
+			cw.setCwDate(cw_date);
+			cw.setCourse(course);
+			cw.setRecorder(recorder);
+			cw.setStudent(reg[i]);
+			cw.setScore(scores[i]);
 			
-			attList.add(att);
+			cwList.add(cw);
 		}
 		
-		int result=AttendanceDb.record(attList);
+		int result=CourseWorkDb.saveCourseWork(cwList);
 		
         if(result > 0){
-        	response.sendRedirect("views/staff/attendance.jsp?success= Record saved successfully!");
+        	response.sendRedirect("views/staff/coursework.jsp?success= Record saved successfully!");
         }else{
-            response.sendRedirect("views/staff/attendance.jsp?error= Sorry! unable to save");
+            response.sendRedirect("views/staff/coursework.jsp?error= Sorry! unable to save");
         }
-
-        pw.close();
+		
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    <%@ page import="java.util.*" %>
+    <%@ page import="java.util.*, java.text.*, java.time.*" %>
 	<%@ page import="com.suza.db.EmployeeDb, com.suza.model.Employee" %>
 <!DOCTYPE html>
 <html>
@@ -16,11 +16,20 @@
 		}else{
 			success = successMessage;
 		}
+		
+		String errorMessage = request.getParameter("error");
+		String error;
+		if(errorMessage == null){
+			error = " ";
+		}else{
+			error = errorMessage;
+		}
 	%>
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 <div class="content">
-	<h5 class="text-success"><%= success %></h5>	
+	<h5 class="text-success"><%= success %></h5>
+	<h5 class="text-danger"><%= error %></h5>	
 	<div class ="row form-horizontal">
 	<div class="col-md-3">
 		<form action="#" method="post">
@@ -68,7 +77,21 @@
 				<td><%= emp.getFirstName() %></td>
 				<td><%= emp.getMiddleName() %></td>
 				<td><%= emp.getLastName() %></td>
-				<td><%= emp.getDob() %></td>
+				<td><% 
+					String date1= emp.getDob();
+					Date date = new SimpleDateFormat("yyyy-MM-dd").parse(date1);
+					Calendar c = Calendar.getInstance();
+					c.setTime(date);
+					int year = c.get(Calendar.YEAR);
+					int month = c.get(Calendar.MONTH);
+					int day = c.get(Calendar.DATE);
+					LocalDate dob = LocalDate.of(year, month, day);
+					LocalDate now = LocalDate.now();
+					Period diff = Period.between(dob, now);
+					int age = diff.getYears();
+					
+					out.print(age);
+				%></td>
 				<td><%= emp.getQualification() %></td>
 				<td><%= emp.getPhone() %></td>
 				<td><%= emp.getEmail() %></td>

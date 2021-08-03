@@ -9,19 +9,36 @@
 <body>
 	<%
 	    List<CourseAssign> list=CourseAssignDb.getAssignedByStaff(recorder);
+	
+		String successMessage = request.getParameter("success");
+		String success;
+		if(successMessage == null){
+			success = " ";
+		}else{
+			success = successMessage;
+		}
+		
+		String errorMessage = request.getParameter("error");
+		String error;
+		if(errorMessage == null){
+			error = " ";
+		}else{
+			error = errorMessage;
+		}
 	%>
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavStaff.jsp" %>
-<div class="content">		
-	
-			<%
-				for(CourseAssign crsa:list){ %>
-				<div  class ="row form-horizontal">
-					<div class="form-group col-md-6">
-						<a href="recordattendance.jsp?enroll=<%= crsa.getEnroll() %>" class="btn btn-primary btn-block"><% out.println(crsa.getCourse()); %></a>
-					</div>
-				</div> 
-			<% } %>
+<div class="content">
+	<h5 class="text-success"><%= success %></h5>
+	<h5 class="text-danger"><%= error %></h5>
+	<%
+		for(CourseAssign crsa:list){ %>
+		<div  class ="row form-horizontal">
+			<div class="form-group col-md-6">
+				<a href="recordattendance.jsp?enroll=<%= crsa.getEnroll() %>" class="btn btn-primary btn-block"><% out.println(crsa.getCourse()); %></a>
+			</div>
+		</div> 
+	<% } %>
 	
 </div>
 <%@ include file="../../includes/footer.jsp"%>

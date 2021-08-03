@@ -8,7 +8,8 @@
 <%@ include file ="../../includes/head.jsp" %>
 <body>
 	<%
-		List<Student> list=StudentDb.getAllStudent();
+	String search = request.getParameter("search");
+ 	List<Student> list=StudentDb.search(search);
 	%>
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
@@ -17,7 +18,6 @@
 	<form action="searchstudent.jsp" method="post">
 		<input type="text" name="search" placeholder="Search...."><input type="submit" value="Search">
 	</form>
-		
 	<h1 class="text-center">List of Students</h1>
 	
 	<div class="table-responsive">

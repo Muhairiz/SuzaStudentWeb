@@ -7,9 +7,8 @@
 	<%@ include file="../../includes/header.jsp" %>
 	<%@ include file="../../includes/sidenavAdmin.jsp" %>
 <div class="content">		
-	<h1 class="text-center">User Profile</h1>
+	<h1 class="text-center">Welcome Back <%= first+" "+last %></h1>
 </div>
-
 <%@ include file="../../includes/footer.jsp"%>
 </body>
 </html>

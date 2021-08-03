@@ -103,6 +103,7 @@ public class StudentDb {
 	        
 	        return std;
 	    }
+	
 
 	public static int updateStudent(Student std) {
 		int result=0;
@@ -139,6 +140,36 @@ public class StudentDb {
             Connection con=StudentDb.getConnection();
             PreparedStatement ps=con.prepareStatement("select * from students where enrolled=?");
             ps.setString(1,en);
+            ResultSet rs=ps.executeQuery();
+            while(rs.next()){
+            	Student std=new Student();
+            	std.setReg(rs.getString(1));
+            	std.setFirstname(rs.getString(2));
+            	std.setMiddlename(rs.getString(3));
+            	std.setLastname(rs.getString(4));
+            	std.setDob(rs.getString(5));
+            	std.setAdmissionYear(rs.getString(6));
+            	std.setComplitionYear(rs.getString(7));
+            	std.setGender(rs.getString(8));
+            	std.setPhone(rs.getString(9));
+            	std.setEmail(rs.getString(10));
+            	std.setPhisical(rs.getString(11));
+            	std.setPassword(rs.getString(12));
+            	std.setFacult(rs.getString(13));
+            	std.setEnrolled(rs.getString(14));
+                list.add(std);
+            }
+            con.close();
+        }catch(Exception e){e.printStackTrace();}
+
+        return list;
+    }
+	
+	public static List<Student> search(String input){
+        List<Student> list=new ArrayList<Student>();
+        try{
+            Connection con=StudentDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("select * from students where student_reg like '%"+input+"%' or first_name like '%"+input+"%'");
             ResultSet rs=ps.executeQuery();
             while(rs.next()){
             	Student std=new Student();

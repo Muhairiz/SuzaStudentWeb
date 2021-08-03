@@ -1,7 +1,6 @@
 package com.suza.controllers;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,7 +33,6 @@ public class UpdateEmployee extends HttpServlet {
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		 response.setContentType("text/html");
-	     PrintWriter out=response.getWriter();
 	     String emp_no=request.getParameter("id");
 		 String fname=request.getParameter("fname");
 		 String mname=request.getParameter("mname");
@@ -72,8 +70,7 @@ public class UpdateEmployee extends HttpServlet {
 	        if(result>0){
 	            response.sendRedirect("views/admin/viewacademic.jsp?success= Record updated successfully!");
 	        }else{
-	            out.println("Sorry! unable to save record");
-	            response.sendRedirect("views/admin/updateacademic.jsp");
+	            response.sendRedirect("views/admin/viewacademic.jsp?error= Sorry! unable to updated");
 	        }
 	}
 
