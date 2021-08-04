@@ -1,6 +1,9 @@
 package com.suza.controllers;
 
 import java.io.*;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 import javax.servlet.ServletException;
@@ -27,6 +30,34 @@ public class Login extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    public static String getMd5(String input)
+    {
+        try {
+  
+            // Static getInstance method is called with hashing MD5
+            MessageDigest md = MessageDigest.getInstance("MD5");
+  
+            // digest() method is called to calculate message digest
+            //  of an input digest() return array of byte
+            byte[] messageDigest = md.digest(input.getBytes());
+  
+            // Convert byte array into signum representation
+            BigInteger no = new BigInteger(1, messageDigest);
+  
+            // Convert message digest into hex value
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        } 
+  
+        // For specifying wrong message digest algorithms
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -35,9 +66,12 @@ public class Login extends HttpServlet {
 		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		response.setContentType("text/html");
+	response.setContentType("text/html");
 	String username = request.getParameter("username");
-	String password = request.getParameter("pass");
+	String pass = request.getParameter("pass");
+	
+	String password = getMd5(pass);
+	
 
 	EmployeeDb edb=new EmployeeDb();
 	try {

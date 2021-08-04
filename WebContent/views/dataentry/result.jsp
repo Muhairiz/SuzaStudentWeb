@@ -26,7 +26,7 @@
 		}
 	%>
 	<%@ include file="../../includes/header.jsp" %>
-	<%@ include file="../../includes/sidenavStaff.jsp" %>
+	<%@ include file="../../includes/sidenavDEntry.jsp" %>
 <div class="content">
 	<h5 class="text-success"><%= success %></h5>
 	<h5 class="text-danger"><%= error %></h5>	
