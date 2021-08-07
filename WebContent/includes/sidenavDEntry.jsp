@@ -6,6 +6,7 @@
   <div class="dropdown-container">
     <a href="result.jsp">Record Result</a>
     <a href="#">Manage Result</a>
+    <a href="viewresults.jsp">All Result</a>
   </div> 
 </div>
 

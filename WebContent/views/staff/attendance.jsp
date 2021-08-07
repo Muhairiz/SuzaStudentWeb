@@ -35,7 +35,7 @@
 		for(CourseAssign crsa:list){ %>
 		<div  class ="row form-horizontal">
 			<div class="form-group col-md-6">
-				<a href="recordattendance.jsp?enroll=<%= crsa.getEnroll() %>" class="btn btn-primary btn-block"><% out.println(crsa.getCourse()); %></a>
+				<a href="recordattendance.jsp?enroll=<%= crsa.getEnroll() %>&course=<%= crsa.getCourse() %>" class="btn btn-primary btn-block"><% out.println(crsa.getCourse()); %></a>
 			</div>
 		</div> 
 	<% } %>

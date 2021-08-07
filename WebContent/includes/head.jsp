@@ -1,4 +1,5 @@
 <%@ page import="java.util.*" %>
+	<%@ page import="java.util.*, java.text.*, java.time.*" %>
 <head>
 	<meta charset="ISO-8859-1">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +19,9 @@
 		String last =(String)session.getAttribute("lname");
 		String recorder =(String)session.getAttribute("id_no");
 		String myRoll =(String)session.getAttribute("roll");
+		
+		LocalDate now = LocalDate.now();
+		int currentYear = now.getYear();
 		
 		response.setHeader("Cache-Control", "no-cache");
 		response.setHeader("Cache-Control", "no-store");

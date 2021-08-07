@@ -138,7 +138,8 @@ $().ready(function(){
 			flt_code: "required",
 			week: "required",
 			status: "required",
-			att_date: "required"
+			att_date: "required",
+			score: "required"
 		},
 		
 		
@@ -233,7 +234,8 @@ $().ready(function(){
 			flt_code: "please enter faculty code",
 			week: "please enter week number",
 			status: "please provide status",
-			att_date: "please provide a date"
+			att_date: "please provide a date",
+			score: "please provide the score"
 		},
 		
 		submitHandler: function(form){

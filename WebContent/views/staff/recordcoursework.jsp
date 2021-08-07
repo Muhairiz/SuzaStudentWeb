@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ page import="java.util.*" %>
 	<%@ page import="com.suza.db.StudentDb, com.suza.db.CourseAssignDb" %>
 	<%@ page import="com.suza.model.Student, com.suza.model.CourseAssign" %>
 <!DOCTYPE html>
@@ -11,9 +10,8 @@
 	<%@ include file="../../includes/sidenavStaff.jsp" %>
 	<%
 		String enroll = request.getParameter("enroll");
+		String course = request.getParameter("course");
 	 	List<Student> list=StudentDb.getAllStudentEnroll(enroll);
-	 	
-	 	 List<CourseAssign> listc=CourseAssignDb.getAssignedByStaff(recorder);
 	%>
 <div class="content">
 <h1 class="text-center">Coursework Form</h1>	
@@ -22,15 +20,11 @@
 	<div class ="row form-horizontal">
      		<div class="form-group col-md-3">  	 	
 			     <label> Attendance Date:  <span class="text-danger">*</span></label>
-			     <input class="form-control" type="date" name="cw_date" >
+			     <input class="form-control" type="date" name="cw_date" value="<%= now %>" readonly>
      		</div>
      		<div class="form-group col-md-3">  	 	
 			     <label> Course:</label>
-			     <select class="form-control" name="course">
-					<% for(CourseAssign crsa:listc){ %>
-						<option><%= crsa.getCourse() %></option>
-					<%} %>
-				</select>
+			     <input class="form-control" name="course" value="<%= course %>" readonly>
      		</div>
      		<input  type="hidden" name="recorder" value="<%= recorder %>" >
      	</div>
@@ -57,8 +51,8 @@
 			     <input class="form-control" type="text" name="full_name" value="<%= std.getFirstname()+" "+std.getMiddlename()+" "+std.getLastname() %>" readonly>
      		</div>
      		<div class="form-group col-md-5">  	 	
-			     <div class="form-group col-md-4">
-			     	 <input class="form-control" type="text" name="score">
+			     <div class="form-group col-md-5">
+			     	 <input class="form-control" type="number" name="score" min=0 max=40 >
 			     </div>
      		</div>
      	</div>

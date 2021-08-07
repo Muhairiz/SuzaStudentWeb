@@ -26,8 +26,7 @@ public class UpdateEmployee extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
     
-    public static String getMd5(String input)
-    {
+    public static String getMd5(String input){
         try {
   
             // Static getInstance method is called with hashing MD5
@@ -59,11 +58,8 @@ public class UpdateEmployee extends HttpServlet {
 	 */
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		//response.getWriter().append("Served at: ").append(request.getContextPath())
 	     
-		
-		 response.setContentType("text/html");
 	     String emp_no=request.getParameter("id");
 		 String fname=request.getParameter("fname");
 		 String mname=request.getParameter("mname");

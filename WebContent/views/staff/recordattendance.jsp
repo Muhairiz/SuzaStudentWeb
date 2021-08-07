@@ -3,6 +3,7 @@
      <%@ page import="java.util.*" %>
 	<%@ page import="com.suza.db.StudentDb, com.suza.db.CourseAssignDb" %>
 	<%@ page import="com.suza.model.Student, com.suza.model.CourseAssign" %>
+
 <!DOCTYPE html>
 <html>
 <%@ include file ="../../includes/head.jsp" %>
@@ -11,9 +12,8 @@
 	<%@ include file="../../includes/sidenavStaff.jsp" %>
 	<%
 		String enroll = request.getParameter("enroll");
+		String course = request.getParameter("course");
 	 	List<Student> list=StudentDb.getAllStudentEnroll(enroll);
-	 	
-	 	 List<CourseAssign> listc=CourseAssignDb.getAssignedByStaff(recorder);
 	%>
 <div class="content">
 <h1>Attendance Form</h1>	
@@ -26,15 +26,11 @@
      		</div>
      		<div class="form-group col-md-3">  	 	
 			     <label> Attendance Date:  <span class="text-danger">*</span></label>
-			     <input class="form-control" type="date" name="att_date" >
+			     <input class="form-control" type="date" name="att_date" value="<%= now %>" readonly>
      		</div>
      		<div class="form-group col-md-3">  	 	
 			     <label> Course:</label>
-			     <select class="form-control" name="course">
-					<% for(CourseAssign crsa:listc){ %>
-						<option><%= crsa.getCourse() %></option>
-					<%} %>
-				</select>
+			     <input class="form-control" name="course" value="<%= course %>" readonly>
      		</div>
      		<input  type="hidden" name="recorder" value="<%= recorder %>" >
      	</div>
