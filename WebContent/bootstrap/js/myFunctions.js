@@ -45,6 +45,7 @@
 		}
 	};
 	
+	
 	//FORM VALIDATION
 $().ready(function(){
 	$("form[name= 'myForm']").validate({
@@ -102,6 +103,15 @@ $().ready(function(){
 			password: {
 				required: true,
 				minlength: 5,
+			},
+			
+			newPass: {
+				required: true,
+				minlength: 5,
+			},
+			
+			confpass: {
+				equalTo: "#newpass"
 			},
 			
 			semester: {
@@ -219,6 +229,15 @@ $().ready(function(){
 			password: {
 				required: "please enter password",
 				minlength: "pasword must be contain atleat 5 characters",		
+			},
+			
+			newPass: {
+				required: "please enter the new password",
+				minlength: "pasword must be contain atleat 5 characters",		
+			},
+			
+			confpass: {
+				equalTo: "Password does not match"	
 			},
 			
 			username: "please enter username",

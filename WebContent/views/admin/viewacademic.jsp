@@ -62,8 +62,7 @@
 				<th>Roll</th>
 				<th>Department</th>
 				<th>Address</th>
-				<th>Delete</th>
-				<th>Update</th>
+				<th colspan="2">Actions</th>
 			</tr>
 		</thead>
 		<tbody id="tableData">
@@ -86,7 +85,6 @@
 					int month = c.get(Calendar.MONTH);
 					int day = c.get(Calendar.DATE);
 					LocalDate dob = LocalDate.of(year, month, day);
-					LocalDate now = LocalDate.now();
 					Period diff = Period.between(dob, now);
 					int age = diff.getYears();
 					

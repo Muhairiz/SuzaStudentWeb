@@ -56,7 +56,8 @@
 	<div class="dropdown-container">
 	  <a href="registerarea.jsp">Add PT Area</a>
 	  <a href="viewarea.jsp"><i class="fa fa-binoculars"></i>Manage PT Area</a>
-	</div>  
+	</div> 
+	<a class="text-light" href="change.jsp"><i class="fa fa-lock"></i>Change Password</a> 
 </div>
 
 <script type="text/javascript">

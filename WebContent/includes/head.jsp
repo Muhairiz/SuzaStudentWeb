@@ -1,4 +1,3 @@
-<%@ page import="java.util.*" %>
 	<%@ page import="java.util.*, java.text.*, java.time.*" %>
 <head>
 	<meta charset="ISO-8859-1">
@@ -18,7 +17,7 @@
 		String first =(String)session.getAttribute("fname");
 		String last =(String)session.getAttribute("lname");
 		String recorder =(String)session.getAttribute("id_no");
-		String myRoll =(String)session.getAttribute("roll");
+		String roll =(String)session.getAttribute("roll");
 		
 		LocalDate now = LocalDate.now();
 		int currentYear = now.getYear();

@@ -154,6 +154,22 @@ public class EmployeeDb {
 		return result;
 	}
 	
+	public static int updatePassword(String newpass, String current, String id) {
+		int result=0;
+        try{
+            Connection con=EmployeeDb.getConnection();
+            PreparedStatement ps=con.prepareStatement("update employees set password=? where password=? and employee_no=?");
+            
+            ps.setString(1,newpass);
+            ps.setString(2,current);
+            ps.setString(3,id);
+            
+            result=ps.executeUpdate();
+            con.close();
+        }catch(Exception ex){ex.printStackTrace();}
+		return result;
+	}
+	
 	public static int delete(String emp_no){
         int status=0;
         try{
